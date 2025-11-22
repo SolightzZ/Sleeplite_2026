@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:search_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/wateredge_condition"
+    },
+    "places_feature": "bioscape:hot_springs/wateredge_condition_water",
+    "search_volume": {
+      "min": [0, 0, 0],
+      "max": [0, 0, 0]
+    },
+    "search_axis": "+y"
+  }
+}

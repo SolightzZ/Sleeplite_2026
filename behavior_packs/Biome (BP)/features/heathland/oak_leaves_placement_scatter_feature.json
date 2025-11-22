@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:heathland/oak_leaves_placement_scatter_feature"
+    },
+    "iterations": 13,
+    "x": 0,
+    "z": 0,
+    "y": {
+      "extent": [ 0, 12 ],
+      "distribution": "fixed_grid"
+    },
+    "project_input_to_floor": false,
+    "places_feature": "bioscape:heathland/oak_leaves_fixed_single_block_feature"
+  }
+}

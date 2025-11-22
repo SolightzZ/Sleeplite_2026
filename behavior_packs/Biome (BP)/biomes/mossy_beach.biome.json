@@ -1,0 +1,74 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "bioscape:mossy_beach"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.4,
+        "snow_accumulation": [0.0, 0.25],
+        "temperature": 0.8
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "stone_beach"
+      },
+      "minecraft:surface_builder": {
+        "builder": {
+          "type": "minecraft:overworld",
+          "sea_floor_depth": 7,
+          "sea_floor_material": "minecraft:gravel",
+          "foundation_material": "minecraft:stone",
+          "mid_material": "minecraft:cobblestone",
+          "top_material": "minecraft:cobblestone",
+          "sea_material": "minecraft:water"
+        }
+      },
+      "minecraft:surface_material_adjustments": {
+        "adjustments": [
+          {
+            "materials": {
+              "top_material": "minecraft:mossy_cobblestone"
+            },
+            "noise_frequency_scale": 0.55,
+            "noise_range": [-0.1, 0.1]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:mossy_cobblestone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.1, 0.1]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:moss_block"
+            },
+            "noise_frequency_scale": 0.59,
+            "noise_range": [-0.1, 0.1]
+          },
+          {
+            "materials": {
+              "top_material": "minecraft:moss_block"
+            },
+            "noise_frequency_scale": 0.5,
+            "noise_range": [-0.1, 0.1]
+          }
+        ]
+      },
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "minecraft:overworld",
+            "targets": ["minecraft:beach", "minecraft:stone_beach"],
+            "amount": 0.4,
+            "noise_frequency_scale": 1.0
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": ["mossy_beach", "monster", "overworld", "caves", "bioscape"]
+      }
+    }
+  }
+}

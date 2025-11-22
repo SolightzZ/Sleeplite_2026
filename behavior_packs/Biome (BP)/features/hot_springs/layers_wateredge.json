@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/layers_wateredge"
+    },
+    "features": [
+      "bioscape:hot_springs/wateredge_condition",
+      "bioscape:hot_springs/wateredge_layers"
+    ],
+    "early_out": "first_failure"
+  }
+}

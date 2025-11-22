@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/layers_wateredge"
+    },
+    "features": [
+      "bioscape:desert_oasis/wateredge_condition",
+      "bioscape:desert_oasis/wateredge_layers"
+    ],
+    "early_out": "first_failure"
+  }
+}

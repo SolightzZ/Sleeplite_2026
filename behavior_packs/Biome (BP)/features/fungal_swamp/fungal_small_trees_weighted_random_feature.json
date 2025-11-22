@@ -1,0 +1,12 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:fungal_swamp/fungal_small_trees_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:fungal_swamp/spruce_tree_feature", 1], 
+      ["bioscape:fungal_swamp/oak_tree_feature", 1]
+    ]
+  }
+}

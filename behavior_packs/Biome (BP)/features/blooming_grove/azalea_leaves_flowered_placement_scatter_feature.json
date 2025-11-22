@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:blooming_grove/azalea_leaves_flowered_placement_scatter_feature"
+    },
+    "iterations": 10,
+    "x": 0,
+    "z": 0,
+    "y": {
+      "extent": [ 0, 16 ],
+      "distribution": "uniform"
+    }, 
+    "places_feature": "bioscape:blooming_grove/azalea_leaves_flowered_scatter_feature"
+  }
+}

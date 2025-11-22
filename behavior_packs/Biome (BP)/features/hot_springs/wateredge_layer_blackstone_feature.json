@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/wateredge_layer_blackstone_feature"
+    },
+    "places_feature": "bioscape:hot_springs/blackstone_single_block_feature",
+    "iterations": 245,
+    "x": {
+      "distribution": "uniform",
+      "extent": [ -3, 4 ]
+    },
+    "z": {
+      "distribution": "uniform",
+      "extent": [ -3, 4 ]
+    },
+    "y": {
+      "distribution": "uniform",
+      "extent": [ -3, 2 ]
+    }
+  }
+}

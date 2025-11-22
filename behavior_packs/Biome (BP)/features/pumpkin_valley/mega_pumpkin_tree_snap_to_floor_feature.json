@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:snap_to_surface_feature": {
+    "description": {
+      "identifier": "bioscape:pumpkin_valley/mega_pumpkin_tree_snap_to_floor_feature"
+    },
+    "feature_to_snap": "bioscape:pumpkin_valley/mega_pumpkin_feature",
+    "vertical_search_range": 12,
+    "surface": "floor",
+    "allow_air_placement": true,
+    "allow_underwater_placement": false
+  }
+}

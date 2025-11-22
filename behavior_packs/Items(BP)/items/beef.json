@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:beef"
+    },
+
+    "components": {
+      "minecraft:use_duration": 32,
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": "low",
+        "effects": [
+          {
+            "name": "hunger",
+            "chance": 0.8,
+            "duration": 30,
+            "amplifier": 0
+          },
+          {
+            "name": "regeneration",
+            "chance": 1,
+            "duration": 3,
+            "amplifier": 2
+          }
+        ]
+      }
+    }
+  }
+}

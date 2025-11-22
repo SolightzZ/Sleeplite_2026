@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Sleeplite SMP 2025",
+    "name": "[8] Better Structures",
+    "uuid": "5ede07db-bea4-43cb-b437-f2593eb594fa",
+    "version": [6, 5, 0],
+    "min_engine_version": [1, 20, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "ca8db461-8d42-44db-8ab1-df0187a8103a",
+      "version": [6, 5, 0]
+    }
+  ],
+  "metadata": {
+    "generated_with": {
+      "bridge": ["1.8.5"]
+    }
+  }
+}

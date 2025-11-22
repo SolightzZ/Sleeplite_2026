@@ -1,0 +1,12 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/wateredge_layers"
+    },
+    "features": [
+      "bioscape:desert_oasis/wateredge_layer_moss_block_feature",
+      "bioscape:desert_oasis/wateredge_layer_clay"
+    ]
+  }
+}

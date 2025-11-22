@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/smooth_basalt_single_block_feature"
+    },
+    "places_block": "minecraft:smooth_basalt",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:stone",
+      "minecraft:calcite",
+      "minecraft:gravel",
+      "minecraft:magma",
+      "minecraft:coarse_dirt"
+    ]
+  }
+}

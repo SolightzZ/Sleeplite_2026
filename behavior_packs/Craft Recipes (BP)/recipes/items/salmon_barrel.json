@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "dustydecorations:salmon_barrel"
+    },
+    "tags": ["avanced"],
+    "key": {
+      "#": {
+        "item": "minecraft:salmon"
+      },
+      "*": {
+        "item": "minecraft:barrel"
+      }
+    },
+    "pattern": ["   ", "###", " * "],
+    "result": {
+      "item": "dustydecorations:salmon_barrel"
+    }
+  }
+}

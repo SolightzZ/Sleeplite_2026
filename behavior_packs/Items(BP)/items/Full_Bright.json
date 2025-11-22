@@ -1,0 +1,17 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:fullBright_",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "Full Bright"
+      },
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

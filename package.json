@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@minecraft/common": "^1.2.0",
+    "@minecraft/math": "^2.2.11",
+    "@minecraft/server": "^2.2.0",
+    "@minecraft/server-admin": "file:1.0.0-beta.1.21.114-stable",
+    "@minecraft/server-gametest": "^1.0.0-beta.1.21.114-stable",
+    "@minecraft/server-net": "^1.0.0-beta.1.21.114-stable",
+    "@minecraft/server-ui": "^2.0.0",
+    "@minecraft/vanilla-data": "^1.21.114"
+  }
+}

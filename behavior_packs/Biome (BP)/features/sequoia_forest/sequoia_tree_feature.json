@@ -1,0 +1,81 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "bioscape:sequoia_forest/sequoia_tree_feature"
+    },
+    "mega_trunk": {
+      "trunk_width": 2,
+      "trunk_height": {
+        "base": 20,
+        "intervals": [ 4, 6 ]
+      },
+      "trunk_block": "minecraft:stripped_acacia_log",
+      "trunk_decoration": {
+        "decoration_block": "minecraft:vine",
+        "decoration_chance": {
+          "numerator": 1,
+          "denominator": 8
+        }
+      },
+      "branches": {
+        "branch_length": 3 ,
+        "branch_slope": 0,
+        "branch_interval": 3,
+        "branch_altitude_factor": {
+          "min": 0.4,
+          "max": 0.8
+        },
+        "branch_canopy": {
+          "mega_canopy": {
+            "canopy_height": 3,
+            "base_radius": 2,
+            "core_width": 2,
+            "simplify_canopy": true,
+            "leaf_block": {
+              "name": "minecraft:acacia_leaves"
+            }
+          }
+        }
+      }
+    },
+    "mega_pine_canopy": {
+      "canopy_height": {
+        "range_min": 3,
+        "range_max": 8
+      },
+      "base_radius": 0,
+      "radius_step_modifier": 3.5,
+      "core_width": 2,
+      "leaf_block": {
+        "name": "minecraft:acacia_leaves"
+      }
+    },
+    "may_grow_on": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "base_block": [
+      "minecraft:dirt",
+      "minecraft:podzol",
+      "minecraft:coarse_dirt"
+    ],
+    "may_grow_through": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:snow_layer",
+      "minecraft:acacia_leaves",
+      "minecraft:azalea_leaves",
+      "minecraft:azalea_leaves_flowered",
+      "minecraft:birch_leaves",
+      "minecraft:cherry_leaves",
+      "minecraft:dark_oak_leaves",
+      "minecraft:jungle_leaves",
+      "minecraft:mangrove_leaves",
+      "minecraft:oak_leaves",
+      "minecraft:pale_oak_leaves",
+      "minecraft:spruce_leaves"
+    ]
+  }
+}

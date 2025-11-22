@@ -1,0 +1,119 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "addon:paint64x64",
+      "menu_category": {
+        "category": "equipment",
+        "is_hidden_in_commands": false
+      },
+      "traits": {
+        "minecraft:placement_position": {
+          "enabled_states": ["minecraft:block_face"]
+        }
+      },
+      "states": {
+        "addon:paint64x64": {
+          "values": {
+            "min": 0,
+            "max": 15
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:liquid_detection": {
+        "detection_rules": [
+          {
+            "can_contain_liquid": true
+          }
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.05
+      },
+      "minecraft:collision_box": {
+        "origin": [-4, 0, -4],
+        "size": [8, 8, 8]
+      },
+      "minecraft:selection_box": {
+        "origin": [-4, 0, -4],
+        "size": [8, 8, 8]
+      },
+      "minecraft:geometry": {
+        "identifier": "geometry.paints64x64",
+        "bone_visibility": {
+          "up_0": "q.block_state('minecraft:block_face') == 'up' && math.mod(q.block_state('addon:paint64x64'), 4) == 0",
+          "side": "q.block_state('minecraft:block_face') != 'up'"
+        }
+      },
+      "minecraft:tick": {
+        "interval_range": [10, 20],
+        "looping": true
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "paint64x64",
+          "ambient_occlusion": false,
+          "render_method": "alpha_test"
+        },
+        "custom_down": {
+          "texture": "paint64x64",
+          "ambient_occlusion": false,
+          "render_method": "alpha_test"
+        },
+        "down": {
+          "texture": "soul_sand",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:placement_filter": {
+        "conditions": [
+          {
+            "allowed_faces": ["up", "side"]
+          }
+        ]
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('addon:paint64x64') >= 4 || q.block_state('minecraft:block_face') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, -90, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('addon:paint64x64') >= 8 || q.block_state('minecraft:block_face') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 180, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('addon:paint64x64') >= 12 || q.block_state('minecraft:block_face') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [0, 90, 0]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:block_face') != 'up'",
+        "components": {
+          "minecraft:collision_box": {
+            "origin": [-4, 4, 0],
+            "size": [8, 8, 8]
+          },
+          "minecraft:selection_box": {
+            "origin": [-4, 4, 0],
+            "size": [8, 8, 8]
+          }
+        }
+      }
+    ]
+  }
+}

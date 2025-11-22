@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.50",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:coniferous_forest/sweet_berry_bush_single_block_feature"
+    },
+    "places_block": [
+      {
+        "block": {
+          "name": "minecraft:sweet_berry_bush",
+          "states": {
+            "growth": 0
+          }
+        },
+        "weight": 1
+      },
+      {
+        "block": {
+          "name": "minecraft:sweet_berry_bush",
+          "states": {
+            "growth": 6
+          }
+        },
+        "weight": 6
+      },
+      {
+        "block": {
+          "name": "minecraft:sweet_berry_bush",
+          "states": {
+            "growth": 7
+          }
+        },
+        "weight": 7
+      }
+    ], 
+    "enforce_survivability_rules": true,
+    "enforce_placement_rules": true,
+    "may_replace": [
+      "minecraft:air"
+    ],
+    "may_attach_to": {
+      "bottom": [
+        "minecraft:grass_block"
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:co",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:max_stack_size": 64,
+      "minecraft:use_duration": 32,
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation_modifier": "normal",
+        "can_always_eat": true,
+        "using_converts_to": "glass_bottle",
+        "effects": [
+          {
+            "name": "fire_resistance",
+            "chance": 1,
+            "duration": 1080,
+            "amplifier": 2
+          }
+        ]
+      },
+      "minecraft:display_name": {
+        "value": "co"
+      },
+      "minecraft:allow_off_hand": {
+        "value": true
+      },
+      "minecraft:cooldown": {
+        "category": "attack",
+        "duration": 1
+      },
+      "minecraft:damage": {
+        "value": 2
+      }
+    }
+  }
+}

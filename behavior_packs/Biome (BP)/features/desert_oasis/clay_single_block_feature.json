@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/clay_single_block_feature"
+    },
+    "places_block": "minecraft:clay",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:sand",
+      "minecraft:sandstone",
+      "minecraft:red_sand",
+      "minecraft:red_sandstone",
+      "minecraft:moss_block",
+      "minecraft:grass_block",
+      "minecraft:dirt",
+      "minecraft:blackstone"
+    ]
+  }
+}

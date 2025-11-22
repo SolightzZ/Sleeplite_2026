@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:coniferous_forest_red_mushroom_feature_rule",
+      "places_feature": "bioscape:coniferous_forest/red_mushroom_scatter_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+        	"any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "coniferous_forest"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "sequoia_forest"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 2,
+      "x": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [ 0, "q.heightmap(v.worldx, v.worldz) + 32" ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      }
+    }
+  }
+}

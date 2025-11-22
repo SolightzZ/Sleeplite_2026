@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[6] Player heads",
+    "description": "Sleeplite Packs",
+    "uuid": "e09793a5-dcc2-4da0-a532-21345bc2c3fa",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [1, 0, 2],
+      "type": "data",
+      "uuid": "8194af76-3a39-4cdc-a042-3dd1bdf94e3f"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "17b5d028-7f58-40c0-9ba5-34a7716f9adc",
+      "version": [1, 0, 1]
+    }
+  ]
+}

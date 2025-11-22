@@ -1,0 +1,12 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:protection"
+    },
+    "components": {
+      "minecraft:icon": "protection",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

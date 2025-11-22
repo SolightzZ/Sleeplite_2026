@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:gravel_canyon/coral_yellow_dead_single_block_feature"
+    },
+    "places_block": {
+      "name": "minecraft:coral_fan_dead",
+      "states": {
+        "coral_color": "yellow"
+      }
+    },
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:air"
+    ],
+    "may_attach_to": {
+      "bottom": [
+        "minecraft:gravel"
+      ]
+    }
+  }
+}

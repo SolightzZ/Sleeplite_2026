@@ -1,0 +1,13 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:the_coffee_bean"
+    },
+    "components": {
+      "minecraft:icon": "the_coffee_bean",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

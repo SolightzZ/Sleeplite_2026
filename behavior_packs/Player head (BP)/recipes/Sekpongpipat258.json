@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "addon:Sekpongpipat258_block"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["#"],
+    "key": {
+      "#": {
+        "item": "addon:Sekpongpipat258_block"
+      }
+    },
+    "unlock": [
+      {
+        "item": "addon:Sekpongpipat258"
+      }
+    ],
+    "result": {
+      "item": "addon:Sekpongpipat258",
+      "count": 1
+    }
+  }
+}

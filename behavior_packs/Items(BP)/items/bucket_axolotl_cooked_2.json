@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:cooked_axolotl_bucket_2",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "Cooked axolotl bucket [Medium] "
+      },
+      "minecraft:hand_equipped": false,
+      "minecraft:max_stack_size": 16,
+      "minecraft:stack_by_data": true,
+      "minecraft:food": {
+        "using_converts_to": "bucket",
+        "saturation_modifier": "normal",
+        "nutrition": 10,
+        "can_always_eat": true
+      },
+      "minecraft:use_duration": 32
+    }
+  }
+}

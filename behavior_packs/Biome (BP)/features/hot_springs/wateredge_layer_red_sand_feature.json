@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/wateredge_layer_red_sand_feature"
+    },
+    "places_feature": "bioscape:hot_springs/wateredge_layers_red_sand_blocks",
+    "iterations": 100,
+    "x": {
+      "distribution": "uniform",
+      "extent": [-2, 3]
+    },
+    "z": {
+      "distribution": "uniform",
+      "extent": [-2, 3]
+    },
+    "y": {
+      "distribution": "uniform",
+      "extent": [-2, 2]
+    }
+  }
+}

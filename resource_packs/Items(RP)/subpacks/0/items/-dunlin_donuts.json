@@ -1,0 +1,13 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:dunlin_donuts"
+    },
+    "components": {
+      "minecraft:icon": "dunlin_donuts",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

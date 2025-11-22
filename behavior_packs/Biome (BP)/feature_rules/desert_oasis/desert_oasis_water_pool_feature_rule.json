@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:desert_oasis_water_pool_feature_rule",
+      "places_feature": "bioscape:desert_oasis/water_single_block_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        {
+        	"any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "desert_oasis"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "red_oasis"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 256,
+      "x": {
+        "distribution": "fixed_grid",
+        "extent": [ 0, 15 ]
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)-1",
+      "z": {
+        "distribution": "fixed_grid",
+        "extent": [ 0, 15 ]
+      }
+    }
+  }
+}

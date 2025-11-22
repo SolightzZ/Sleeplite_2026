@@ -1,0 +1,20 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Swing Animation by Tapped",
+    "name": "Swing Animation V2",
+    "uuid": "02e2edd0-7d9f-4138-b5d9-2250e2741c20",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 17, 0]
+  },
+  "modules": [
+    {
+      "description": "Swing Animation by Tapped",
+      "type": "resources",
+      "uuid": "910ec27b-7ce3-4d1d-9661-937a8320f28c",
+      "version": [0, 0, 1],
+      "entry": null,
+      "language": null
+    }
+  ]
+}

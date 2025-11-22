@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/farmland_with_wheat_feature"
+    },
+    "early_out": "first_failure",
+    "features": [
+      "bioscape:prairie/farmland_single_block_feature",
+      "bioscape:prairie/wheat_fixup_scatter_feature"
+    ]
+  }
+}

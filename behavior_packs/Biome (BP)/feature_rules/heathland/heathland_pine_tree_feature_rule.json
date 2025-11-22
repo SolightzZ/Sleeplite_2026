@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:heathland_pine_tree_feature_rule",
+      "places_feature": "bioscape:heathland/pine_tree_fix_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "heathland"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": "math.die_roll_integer(18, 0, 1)",
+      "scatter_chance": 10,
+      "x": {
+        "distribution": "gaussian",
+        "extent": [ -8, 24 ]
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)",
+      "z": {
+        "distribution": "gaussian",
+        "extent": [ -8, 24 ]
+      }
+    }
+  }
+}

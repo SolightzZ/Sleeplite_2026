@@ -1,0 +1,38 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "nicothekid:craft_x_totem"
+    },
+    "priority": 1,
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "gGg",
+      "/E/",
+      "///"
+  ],
+  "key": {
+      "g": {
+          "item": "minecraft:gold_ingot"
+      },
+      "G": {
+          "item": "minecraft:golden_apple"
+      },
+      "/": {
+          "item": "minecraft:blaze_rod"
+      },
+      "E": {
+          "item": "minecraft:emerald_ore"
+      }
+  },
+    "result": {
+      "item": "minecraft:totem",
+      "count": 1
+    },
+    "unlock": [
+      {
+        "item": "minecraft:gold_ingot"
+      }
+    ]
+  }
+}

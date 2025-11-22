@@ -1,0 +1,61 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "bioscape:coniferous_forest/coniferous_tree_mega_width_feature"
+    },
+    "mega_trunk": {
+      "trunk_width": 2,
+      "trunk_height": {
+        "base": 30,
+        "intervals": [ 4, 5 ]
+      },
+      "trunk_block": {
+        "name": "minecraft:log",
+        "states": {
+          "old_log_type": "spruce"
+        }
+      }
+    },
+    "mega_pine_canopy": {
+      "canopy_height": {
+        "range_min": 23,
+        "range_max": 27
+      },
+      "base_radius": 1,
+      "radius_step_modifier": 4,
+      "core_width": 6,
+      "leaf_block": {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "spruce"
+        }
+      }
+    },
+    "may_grow_on": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "base_block": [
+      "minecraft:dirt",
+      "minecraft:coarse_dirt"
+    ],
+    "may_grow_through": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:snow_layer",
+      "minecraft:acacia_leaves",
+      "minecraft:azalea_leaves",
+      "minecraft:azalea_leaves_flowered",
+      "minecraft:birch_leaves",
+      "minecraft:cherry_leaves",
+      "minecraft:dark_oak_leaves",
+      "minecraft:jungle_leaves",
+      "minecraft:mangrove_leaves",
+      "minecraft:oak_leaves",
+      "minecraft:pale_oak_leaves",
+      "minecraft:spruce_leaves"
+    ]
+  }
+}

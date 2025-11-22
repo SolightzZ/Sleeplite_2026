@@ -1,0 +1,12 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:coniferous_forest/coniferous_tree_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:coniferous_forest/coniferous_tree_mega_width_feature", 1], 
+      ["bioscape:coniferous_forest/coniferous_tree_small_width_feature", 3] 
+    ]
+  }
+}

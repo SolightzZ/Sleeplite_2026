@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/wateredge_condition_water"
+    },
+    "places_block": "minecraft:water",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:water"
+    ],
+    "may_attach_to": {
+      "top": "minecraft:air",
+      "sides": [
+        "minecraft:calcite",
+        "minecraft:gravel",
+        "minecraft:smooth_basalt",
+        "minecraft:blackstone",
+        {
+          "name": "minecraft:sand",
+          "states": {
+            "sand_type": "red"
+          }
+        },
+        {
+          "name": "minecraft:stained_hardened_clay",
+          "states": {
+            "color": "yellow"
+          }
+        }
+      ],
+      "min_sides_must_attach": 1
+    }
+  }
+}

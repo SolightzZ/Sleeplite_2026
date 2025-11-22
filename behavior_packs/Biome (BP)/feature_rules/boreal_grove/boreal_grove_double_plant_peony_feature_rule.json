@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:boreal_grove_double_plant_peony_feature_rule",
+      "places_feature": "bioscape:boreal_grove/peony_double_plant_scatter_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+        	"any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "bog"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "boreal_grove"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 5,
+      "x": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [ 0, "q.heightmap(v.worldx, v.worldz) + 32" ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      }
+    }
+  }
+}

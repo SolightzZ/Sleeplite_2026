@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:prairie_farmland_feature_rule",
+      "places_feature": "bioscape:prairie/farmland_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "prairie"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "scatter_chance": 13,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  }
+}

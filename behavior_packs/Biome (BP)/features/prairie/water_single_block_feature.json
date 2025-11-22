@@ -1,0 +1,64 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/water_single_block_feature"
+    },
+    "places_block": "minecraft:water",
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_attach_to": {
+      "min_sides_must_attach": 4,
+      "top": [
+        "minecraft:air"
+      ],
+      "west": [
+        "minecraft:grass",
+        "minecraft:dirt",
+        {
+          "name": "minecraft:farmland",
+          "states": {
+            "moisturized_amount": 7
+          }
+        }
+      ],
+      "north": [
+        "minecraft:grass",
+        "minecraft:dirt",
+        {
+          "name": "minecraft:farmland",
+          "states": {
+            "moisturized_amount": 7
+          }
+        }
+      ],
+      "east": [
+        "minecraft:grass",
+        "minecraft:dirt",
+        {
+          "name": "minecraft:farmland",
+          "states": {
+            "moisturized_amount": 7
+          }
+        }
+      ],
+      "south": [
+        "minecraft:grass",
+        "minecraft:dirt",
+        {
+          "name": "minecraft:farmland",
+          "states": {
+            "moisturized_amount": 7
+          }
+        }
+      ],
+      "bottom": [
+        "minecraft:dirt"
+      ]
+    },
+    "may_replace": [
+      "minecraft:grass",
+      "minecraft:dirt"
+    ]
+  }
+}

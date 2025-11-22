@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:badlands_desert_grass_block_patch_feature_rule",
+      "places_feature": "bioscape:badlands_desert/grass_block_single_block_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "badlands_desert"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 256,
+      "x": {
+        "distribution": "fixed_grid",
+        "extent": [ 0, 15 ]
+      },
+      "y": "t.noise = math.abs(q.noise(v.worldx / 64, v.worldz / 64) * q.noise(v.worldx / 16, v.worldz / 16)); t.noise2 = (q.noise(v.worldx / 32, v.worldz / 32)); ((1 - t.noise < 0.8) && (t.noise2 < 0.3)) ? {return q.heightmap(v.worldx, v.worldz)-1;} : {return -100;};",
+      "z": {
+        "distribution": "fixed_grid",
+        "extent": [ 0, 15 ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/blackstone_single_block_feature"
+    },
+    "places_block": "minecraft:blackstone",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:stone",
+      "minecraft:calcite",
+      "minecraft:gravel",
+      "minecraft:smooth_basalt",
+      "minecraft:magma",
+      "minecraft:coarse_dirt"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/wateredge_layers_red_sand_blocks"
+    },
+    "features": [
+      "bioscape:hot_springs/redsandstone_single_block_feature",
+      "bioscape:hot_springs/redsand_single_block_feature"
+    ],
+    "early_out": "first_success"
+  }
+}

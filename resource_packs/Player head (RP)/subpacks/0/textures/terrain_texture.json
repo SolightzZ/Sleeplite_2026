@@ -1,0 +1,80 @@
+{
+  "num_mip_levels": 4,
+  "padding": 8,
+  "resource_pack_name": "Player head (RP)",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "solightzz": {
+      "textures": "textures/addon/SolightzZ"
+    },
+    "Cxnthiaz": {
+      "textures": "textures/addon/Cxnthiaz"
+    },
+    "DAM0NZ17": {
+      "textures": "textures/addon/DAM0NZ17"
+    },
+    "DeMonKung9987": {
+      "textures": "textures/addon/DeMonKung9987"
+    },
+    "DoomyZazaz": {
+      "textures": "textures/addon/DoomyZazaz"
+    },
+    "GuyyaReiki": {
+      "textures": "textures/addon/GuyyaReiki"
+    },
+    "HENRY_TV_CHANEL": {
+      "textures": "textures/addon/HENRY_TV_CHANEL"
+    },
+    "Karto": {
+      "textures": "textures/addon/Karto"
+    },
+    "KinorlSAO": {
+      "textures": "textures/addon/KinorlSAO"
+    },
+    "Love_Bullet8722": {
+      "textures": "textures/addon/Love_Bullet8722"
+    },
+    "Momoi961277127": {
+      "textures": "textures/addon/Momoi961277127"
+    },
+    "NaraphatZ": {
+      "textures": "textures/addon/NaraphatZ"
+    },
+    "NEUMAXz": {
+      "textures": "textures/addon/NEUMAXz"
+    },
+    "Sekpongpipat258": {
+      "textures": "textures/addon/Sekpongpipat258"
+    },
+    "TaFlookXD": {
+      "textures": "textures/addon/TaFlookXD"
+    },
+    "Tawan8347T": {
+      "textures": "textures/addon/Tawan8347T"
+    },
+    "winosata2009": {
+      "textures": "textures/addon/winosata2009"
+    },
+    "XxsomponxX": {
+      "textures": "textures/addon/XxsomponxX"
+    },
+    "zeerza22": {
+      "textures": "textures/addon/zeerza22"
+    },
+    "KwanXD009": {
+      "textures": "textures/addon/KwanXD009"
+    },
+    "paint32x24": {
+      "textures": "textures/paints/dis"
+    },
+    "paint64x64": {
+      "textures": "textures/paints/day4"
+    },
+    "paint32x64": {
+      "textures": "textures/paints/32x64"
+    },
+    "paint16x16": {
+      "textures": "textures/paints/16x16"
+    }
+  }
+}

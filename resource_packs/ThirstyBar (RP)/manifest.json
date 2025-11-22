@@ -1,0 +1,33 @@
+{
+  "format_version": 2,
+
+  "header": {
+    "name": "[6] Thirsty Bar (RP)",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "3b39fb2f-a5c3-4c85-935a-89efbc17b894",
+    "pack_scope": "world",
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 90]
+  },
+
+  "modules": [
+    {
+      "type": "resources",
+      "description": "Sleeplite SMP 2025",
+      "uuid": "b9892440-7d2e-49a4-be7f-e17216e5c536",
+      "version": [1, 0, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 0
+    },
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 1
+    }
+  ]
+}

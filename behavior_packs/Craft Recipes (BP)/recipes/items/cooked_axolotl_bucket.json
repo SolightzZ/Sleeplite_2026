@@ -1,0 +1,20 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "addon:cooked_axolotl_bucket"
+    },
+    "tags": ["smoker"],
+    "input": {
+      "item": "minecraft:axolotl_bucket"
+    },
+    "output": {
+      "item": "addon:cooked_axolotl_bucket"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:axolotl_bucket"
+      }
+    ]
+  }
+}

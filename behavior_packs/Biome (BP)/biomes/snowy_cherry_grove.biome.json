@@ -1,0 +1,82 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "bioscape:snowy_cherry_grove"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.0,
+        "snow_accumulation": [1.0, 2.0],
+        "temperature": -0.5
+      },
+      "minecraft:surface_builder": {
+        "builder": {
+          "type": "minecraft:overworld",
+          "sea_floor_depth": 7,
+          "sea_floor_material": "minecraft:gravel",
+          "foundation_material": "minecraft:stone",
+          "mid_material": "minecraft:snow",
+          "top_material": "minecraft:snow",
+          "sea_material": "minecraft:ice"
+        }
+      },
+      "minecraft:surface_material_adjustments": {
+        "adjustments": [
+          {
+            "materials": {
+              "top_material": "minecraft:powder_snow"
+            },
+            "noise_frequency_scale": 0.1,
+            "noise_range": [0.35, 0.6]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:powder_snow"
+            },
+            "noise_frequency_scale": 0.1,
+            "noise_range": [0.45, 0.58]
+          }
+        ]
+      },
+      "minecraft:mountain_parameters": {
+        "steep_material_adjustment": {
+          "material": "minecraft:stone",
+          "north_slopes": true,
+          "east_slopes": true,
+          "south_slopes": true,
+          "west_slopes": true
+        },
+        "top_slide": {
+          "enabled": false
+        }
+      },
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "minecraft:overworld",
+            "targets": ["minecraft:cherry_grove", "minecraft:meadow", "minecraft:grove"],
+            "amount": 0.4,
+            "noise_frequency_scale": 0.2
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "snowy_cherry_grove",
+          "cherry_grove",
+          "animal",
+          "monster",
+          "overworld",
+          "caves",
+          "bioscape",
+          "frozen",
+          "spawns_cold_variant_farm_animals",
+          "spawns_cold_variant_frogs",
+          "spawns_snow_foxes",
+          "spawns_white_rabbits"
+        ]
+      }
+    }
+  }
+}

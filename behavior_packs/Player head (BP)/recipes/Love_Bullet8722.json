@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "addon:Love_Bullet8722_block"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["#"],
+    "key": {
+      "#": {
+        "item": "addon:Love_Bullet8722_block"
+      }
+    },
+    "unlock": [
+      {
+        "item": "addon:Love_Bullet8722"
+      }
+    ],
+    "result": {
+      "item": "addon:Love_Bullet8722",
+      "count": 1
+    }
+  }
+}

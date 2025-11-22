@@ -1,0 +1,64 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "bioscape:outback"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.0,
+        "snow_accumulation": [0.0, 0.125],
+        "temperature": 2.0
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "default"
+      },
+      "minecraft:surface_builder": {
+        "builder": {
+          "type": "minecraft:overworld",
+          "sea_floor_depth": 7,
+          "sea_floor_material": "minecraft:gravel",
+          "foundation_material": "minecraft:stone",
+          "mid_material": "minecraft:sand",
+          "top_material": "minecraft:red_sand",
+          "sea_material": "minecraft:water"
+        }
+      },
+      "minecraft:surface_material_adjustments": {
+        "adjustments": [
+          {
+            "materials": {
+              "mid_material": "minecraft:sand",
+              "top_material": "minecraft:sand"
+            },
+            "noise_frequency_scale": 0.0625,
+            "noise_range": [0.212, 1.0]
+          }
+        ]
+      },
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "minecraft:overworld",
+            "targets": ["minecraft:desert", "minecraft:desert_hills", "minecraft:desert_mutated", "minecraft:mesa"],
+            "amount": 0.4,
+            "noise_frequency_scale": 0.2
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "outback",
+          "desert",
+          "animal",
+          "monster",
+          "overworld",
+          "caves",
+          "bioscape",
+          "spawns_warm_variant_farm_animals",
+          "spawns_warm_variant_frogs"
+        ]
+      }
+    }
+  }
+}

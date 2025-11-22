@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:gravel_canyon/coral_dead_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:gravel_canyon/coral_pink_dead_single_block_feature", 1],
+      ["bioscape:gravel_canyon/coral_purple_dead_single_block_feature", 1],
+      ["bioscape:gravel_canyon/coral_red_dead_single_block_feature", 1],
+      ["bioscape:gravel_canyon/coral_yellow_dead_single_block_feature", 1]
+    ]
+  }
+}

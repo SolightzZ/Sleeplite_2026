@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:growing_plant_feature": {
+    "description": {
+      "identifier": "bioscape:badlands_desert/cactus_feature"
+    },
+    "height_distribution":  [
+      [{"range_min": 6, "range_max": 7}, 1],
+      [{"range_min": 7, "range_max": 8}, 10],
+      [{"range_min": 8, "range_max": 9}, 3]
+    ],
+    "growth_direction": "UP",
+    "body_blocks": [
+      ["minecraft:cactus", 1]
+    ],
+    "head_blocks": [
+      ["minecraft:cactus_flower", 1],
+      ["minecraft:air", 7]
+    ]
+  }
+}

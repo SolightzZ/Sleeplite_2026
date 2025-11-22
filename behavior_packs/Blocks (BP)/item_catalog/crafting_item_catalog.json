@@ -1,0 +1,29 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "addon:avanced",
+              "icon": "addon:avanced_crafting"
+            },
+            "items": [
+              "addon:avanced_crafting",
+              "dustydecorations:apple_barrel",
+              "dustydecorations:beetroot_barrel",
+              "dustydecorations:carrot_barrel",
+              "dustydecorations:cod_barrel",
+              "dustydecorations:empty_barrel",
+              "dustydecorations:potato_barrel",
+              "dustydecorations:salmon_barrel",
+              "dustydecorations:sweet_berries_barrel"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

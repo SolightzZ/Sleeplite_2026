@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.attack.rotations": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [
+            0.0,
+            "variable.attack_body_rot_y",
+            0.0
+          ]
+        },
+        "leftarm": {
+          "rotation": [
+            "-(math.sin((1 - math.pow((1 - variable.attack_time), 4)) * 180) * 1.2 + math.sin(variable.attack_time * 180)) * 8.0",
+            0.0,
+            0.0
+          ]
+        },
+        "rightarm": {
+          "rotation": [
+            "-(math.sin((1 - math.pow((1 - variable.attack_time), 4)) * 190) * 1.2 + math.sin(variable.attack_time * 190)) * 52.5",
+            "-(math.sin((1 - math.pow((1 - variable.attack_time), 4)) * 180) ? (-65.0 * math.sin((1 - math.pow((1 - variable.attack_time), 4)) * 175)) + 45.0 : 0.0)",
+            0.0
+          ]
+        }
+      }
+    }
+  }
+}

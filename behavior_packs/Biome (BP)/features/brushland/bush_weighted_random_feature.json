@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:brushland/bush_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:brushland/acacia_bush_feature", 2],
+      ["bioscape:brushland/acacia_small_tree_feature", 1],
+      ["bioscape:brushland/acacia_big_bush_feature", 2]
+    ]
+  }
+}

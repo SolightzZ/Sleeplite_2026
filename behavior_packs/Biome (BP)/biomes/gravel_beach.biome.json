@@ -1,0 +1,42 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "bioscape:gravel_beach"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.6,
+        "snow_accumulation": [0.0, 0.25],
+        "temperature": 0.6
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "stone_beach"
+      },
+      "minecraft:surface_builder": {
+        "builder": {
+          "type": "minecraft:overworld",
+          "sea_floor_depth": 7,
+          "sea_floor_material": "minecraft:gravel",
+          "foundation_material": "minecraft:stone",
+          "mid_material": "minecraft:gravel",
+          "top_material": "minecraft:gravel",
+          "sea_material": "minecraft:water"
+        }
+      },
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "minecraft:overworld",
+            "targets": ["minecraft:beach", "minecraft:cold_beach", "minecraft:stone_beach"],
+            "amount": 0.4,
+            "noise_frequency_scale": 1.0
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": ["gravel_beach", "monster", "overworld", "caves", "bioscape"]
+      }
+    }
+  }
+}

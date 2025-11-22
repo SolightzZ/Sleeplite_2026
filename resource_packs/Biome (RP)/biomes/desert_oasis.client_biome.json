@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "bioscape:desert_oasis"
+    },
+    "components": {
+      "minecraft:fog_appearance": {
+        "fog_identifier": "bioscape:desert_oasis_fog_setting"
+      },
+      "minecraft:grass_appearance": {
+        "color": "#77B338"
+      }, 
+      "minecraft:foliage_appearance": {
+        "color": "#4EB338"
+      }, 
+      "minecraft:water_appearance": {
+        "surface_color": "#45BE90"
+      }
+    }
+  }
+}

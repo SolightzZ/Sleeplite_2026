@@ -1,0 +1,26 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.items",
+        "texture_width": 16.0,
+        "texture_height": 16.0
+      },
+      "bones": [
+        {
+          "name": "rightitem",
+          "texture_meshes": [
+            {
+              "local_pivot": [6.0, 0.0, 6.0],
+              "position": [1.850, -3.5, 1.5],  // Move more to the right (3.0) and downward (-1.0)
+              "rotation": [0.0, 45.9, 270.0],
+              "scale": [0.87, 0.87, 0.87],
+              "texture": "default"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

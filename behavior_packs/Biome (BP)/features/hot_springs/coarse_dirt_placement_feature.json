@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/coarse_dirt_placement_feature"
+    },
+    "places_feature": "bioscape:hot_springs/coarse_dirt_single_block_feature",
+    "iterations": "v.originy >= 66 + 4 * q.noise(v.originx/4,v.originz/4) && q.noise(v.originx/128,v.originz/128) + 0.03125",
+    "x": 0,
+    "z": 0,
+    "y": 0
+  }
+}

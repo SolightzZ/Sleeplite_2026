@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:chorus_fruit"
+    },
+
+    "components": {
+      "minecraft:use_duration": 32,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "low",
+        "effects": [
+          {
+            "name": "hunger",
+            "chance": 0.8,
+            "duration": 30,
+            "amplifier": 0
+          },
+          {
+            "name": "regeneration",
+            "chance": 1,
+            "duration": 3,
+            "amplifier": 2
+          }
+        ]
+        "on_use_action": "chorus_teleport",
+        "on_use_range": [ 8, 8, 8 ],
+        "cooldown_type": "chorusfruit",
+        "cooldown_time": 20,
+        "can_always_eat": true
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/wheat_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:prairie/wheat_age_5_single_block_feature", 2 ],
+      ["bioscape:prairie/wheat_age_6_single_block_feature", 5 ],
+      ["bioscape:prairie/wheat_age_7_single_block_feature", 10]
+    ]
+  }
+}

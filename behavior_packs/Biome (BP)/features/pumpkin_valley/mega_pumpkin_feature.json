@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:pumpkin_valley/mega_pumpkin_feature"
+    },
+    "features": [
+        "bioscape:pumpkin_valley/pumpkin_layer1_feature",
+        "bioscape:pumpkin_valley/pumpkin_layer2_position_feature",
+        "bioscape:pumpkin_valley/pumpkin_layer3_position_feature",
+        "bioscape:pumpkin_valley/pumpkin_stem_position_feature"
+    ]
+  }
+}

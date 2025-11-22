@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:white_mesa/terracotta_conditions"
+    },
+    "features": [
+      "bioscape:white_mesa/black_terracotta_single_block_feature", 
+      "bioscape:white_mesa/brown_terracotta_single_block_feature", 
+      "bioscape:white_mesa/gray_terracotta_single_block_feature"
+    ]
+  }
+}

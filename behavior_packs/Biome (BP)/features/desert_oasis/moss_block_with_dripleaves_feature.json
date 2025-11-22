@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:vegetation_patch_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/moss_block_with_dripleaves_feature"
+    },
+    "replaceable_blocks": [
+      "minecraft:moss_block"
+    ],
+    "ground_block": "minecraft:moss_block",
+    "vegetation_feature": "minecraft:dripleaf_feature",
+    "surface": "floor",
+    "depth": 1,
+    "vertical_range": 5,
+    "vegetation_chance": 0.05,
+    "horizontal_radius": 5
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "bioscape:temperate_birch"
+    },
+    "components": {
+      "minecraft:grass_appearance": {
+        "color": "#A4BB58"
+      }, 
+      "minecraft:foliage_appearance": {
+        "color": "#EC6E37"
+      }
+    }
+  }
+}

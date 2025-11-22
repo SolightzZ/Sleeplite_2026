@@ -1,0 +1,56 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "bioscape:brushland/acacia_small_tree_feature"
+    },
+    "acacia_trunk": {
+      "trunk_width": 1,
+      "trunk_height": {
+        "base": 2,
+        "intervals": [ 2 ],
+        "min_height_for_canopy": 1
+      },
+      "trunk_block": {
+        "name": "minecraft:acacia_log"
+      },
+      "trunk_lean": {
+        "allow_diagonal_growth": true,
+        "lean_height": 1,
+        "lean_steps": 1
+      }
+    },
+    "acacia_canopy": {
+      "canopy_size": 2,
+      "leaf_block": {
+        "name": "minecraft:acacia_leaves"
+      },
+      "simplify_canopy": true
+    },
+    "may_grow_on": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "base_block": [
+      "minecraft:dirt",
+      "minecraft:coarse_dirt"
+    ],
+    "may_grow_through": [
+      { "tags": "query.any_tag('dirt')" }
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:snow_layer",
+      "minecraft:acacia_leaves",
+      "minecraft:azalea_leaves",
+      "minecraft:azalea_leaves_flowered",
+      "minecraft:birch_leaves",
+      "minecraft:cherry_leaves",
+      "minecraft:dark_oak_leaves",
+      "minecraft:jungle_leaves",
+      "minecraft:mangrove_leaves",
+      "minecraft:oak_leaves",
+      "minecraft:pale_oak_leaves",
+      "minecraft:spruce_leaves"
+    ]
+  }
+}

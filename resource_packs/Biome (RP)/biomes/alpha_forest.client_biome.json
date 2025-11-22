@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "bioscape:alpha_forest"
+    },
+    "components": {
+      "minecraft:sky_color": {
+        "sky_color": "#79A6FF"
+      }, 
+      "minecraft:fog_appearance": {
+        "fog_identifier": "bioscape:alpha_forest_fog_setting"
+      },
+      "minecraft:grass_appearance": {
+        "color": "#B0FF7B"
+      }, 
+      "minecraft:foliage_appearance": {
+        "color": "#78FF39"
+      }, 
+      "minecraft:water_appearance": {
+        "surface_color": "#274FFF"
+      }
+    }
+  }
+}

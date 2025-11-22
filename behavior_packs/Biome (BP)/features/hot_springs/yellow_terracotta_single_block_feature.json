@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/yellow_terracotta_single_block_feature"
+    },
+    "places_block": {
+      "name": "minecraft:stained_hardened_clay",
+      "states": {
+        "color": "yellow"
+      }
+    },
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:magma",
+      "minecraft:coarse_dirt",
+      "minecraft:stone",
+      "minecraft:calcite",
+      "minecraft:gravel",
+      "minecraft:smooth_basalt",
+      "minecraft:blackstone",
+      "minecraft:red_sandstone",
+      {
+        "name": "minecraft:sand",
+        "states": {
+          "sand_type": "red"
+        }
+      }
+    ]
+  }
+}

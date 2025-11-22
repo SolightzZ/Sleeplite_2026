@@ -1,0 +1,12 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:trade"
+    },
+    "components": {
+      "minecraft:icon": "trade",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

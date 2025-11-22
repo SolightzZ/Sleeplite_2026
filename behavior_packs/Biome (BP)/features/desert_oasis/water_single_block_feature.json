@@ -1,0 +1,34 @@
+{
+  "format_version": "1.21.0", 
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/water_single_block_feature"
+    },
+    "places_block": "minecraft:water",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_attach_to": {
+      "min_sides_must_attach": 4,
+      "sides": [
+        "minecraft:grass_block",
+        "minecraft:dirt",
+        "minecraft:water",
+        "minecraft:sand",
+        "minecraft:sandstone",
+        "minecraft:clay"
+      ],
+      "bottom": [
+        "minecraft:grass_block",
+        "minecraft:dirt",
+        "minecraft:water",
+        "minecraft:sand",
+        "minecraft:sandstone",
+        "minecraft:clay"
+      ]
+    },
+    "may_replace": [
+      "minecraft:water",
+      "minecraft:clay"
+    ]
+  }
+}

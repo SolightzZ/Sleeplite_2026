@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:white_mesa/terracotta_column"
+    },
+    "iterations": 64,
+    "x": 0,
+    "z": 0,
+    "y": {
+      "extent": [ -64, 0 ],
+      "distribution": "fixed_grid"
+    },
+    "places_feature": "bioscape:white_mesa/terracotta_conditions"
+  }
+}

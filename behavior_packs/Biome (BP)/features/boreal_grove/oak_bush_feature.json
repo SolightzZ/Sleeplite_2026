@@ -1,0 +1,127 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "bioscape:boreal_grove/oak_bush_feature"
+    },
+    "trunk": {
+      "trunk_height": 1,
+      "trunk_block": {
+        "name": "minecraft:log",
+        "states": {
+          "old_log_type": "oak"
+        }
+      }
+    },
+    "canopy": {
+      "canopy_offset": {
+        "min": -1,
+        "max": 0
+      },
+      "leaf_block": {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "oak"
+        }
+      },
+      "min_width": 1,
+      "canopy_slope": {
+        "rise": 1,
+        "run": 1
+      },
+      "variation_chance": {
+        "numerator": 1,
+        "denominator": 2
+      }
+    },
+    "base_block": [
+      "minecraft:grass",
+      "minecraft:dirt",
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "coarse"
+        }
+      }
+    ],
+    "may_grow_on": [
+      "minecraft:grass",
+      "minecraft:dirt",
+      "minecraft:podzol",
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "coarse"
+        }
+      }
+    ],
+    "may_replace": [
+      "minecraft:air",
+      {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "oak"
+        }
+      },
+      {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "spruce"
+        }
+      },
+      {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "birch"
+        }
+      },
+      {
+        "name": "minecraft:leaves",
+        "states": {
+          "old_leaf_type": "jungle"
+        }
+      },
+      {
+        "name": "minecraft:leaves2",
+        "states": {
+          "new_leaf_type": "acacia"
+        }
+      },
+      {
+        "name": "minecraft:leaves2",
+        "states": {
+          "new_leaf_type": "dark_oak"
+        }
+      },
+      {
+        "name": "minecraft:tallgrass",
+        "states": {
+          "tall_grass_type": "tall"
+        }
+      },
+      {
+        "name": "minecraft:tallgrass",
+        "states": {
+          "tall_grass_type": "fern"
+        }
+      },
+      {
+        "name": "minecraft:tallgrass",
+        "states": {
+          "tall_grass_type": "snow"
+        }
+      }
+    ],
+    "may_grow_through": [
+      "minecraft:grass",
+      "minecraft:dirt",
+      "minecraft:podzol",
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "coarse"
+        }
+      }
+    ]
+  }
+}

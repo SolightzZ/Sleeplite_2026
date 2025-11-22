@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:amethyst_canyon/amethyst_cluster_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:amethyst_canyon/amethyst_cluster_feature", 4], 
+      ["bioscape:amethyst_canyon/large_amethyst_bud_feature", 3], 
+      ["bioscape:amethyst_canyon/medium_amethyst_bud_feature", 2], 
+      ["bioscape:amethyst_canyon/small_amethyst_bud_feature", 1] 
+    ]
+  }
+}

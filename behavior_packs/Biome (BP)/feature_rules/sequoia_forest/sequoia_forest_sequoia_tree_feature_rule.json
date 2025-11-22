@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:sequoia_forest_sequoia_tree_feature_rule",
+      "places_feature": "bioscape:sequoia_forest/sequoia_tree_feature"
+    },
+    "conditions": {
+      "placement_pass": "first_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "sequoia_forest"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "x": {
+        "extent": [ 0, 16 ],
+        "distribution": "uniform"
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)",
+      "z": {
+        "extent": [ 0, 16 ],
+        "distribution": "uniform"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "addon:KwanXD009"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["#"],
+    "key": {
+      "#": {
+        "item": "addon:KwanXD009_block"
+      }
+    },
+    "unlock": [
+      {
+        "item": "addon:KwanXD009"
+      }
+    ],
+    "result": {
+      "item": "addon:KwanXD009",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,178 @@
+
+{
+  "namespace": "hud_ds-tbr",
+
+  "thirsty_bar_item": {
+    "type": "panel",
+    "size": [ 8.2, 9 ],
+    "controls": [
+      {
+        "bg": {
+          "type": "image",
+          "texture": "textures/ui/thirsty_bar/thirst_background",
+          "size": [ "100% + 0.8px", "100%" ],
+          "layer": 1
+        }
+      },
+      {
+        "half": {
+          "type": "image",
+          "texture": "textures/ui/thirsty_bar/thirst_half",
+          "size": [ "100% + 0.8px", "100%" ],
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#collection_index",
+              "binding_type": "collection",
+              "binding_collection_name": "thirsty_bar_items"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "thirsty_bar_data_binding",
+              "source_property_name": "((#preserved_text - '§d§m§z§t§b§r§r§f') * 1)",
+              "target_property_name": "#thirst_value"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(((#collection_index - 10) * -2) - 1)",
+              "target_property_name": "#index"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index - #thirst_value) = 0)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "full": {
+          "type": "image",
+          "texture": "textures/ui/thirsty_bar/thirst_full",
+          "size": [ "100% + 0.8px", "100%" ],
+          "layer": 5,
+          "bindings": [
+            {
+              "binding_name": "#collection_index",
+              "binding_type": "collection",
+              "binding_collection_name": "thirsty_bar_items"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "thirsty_bar_data_binding",
+              "source_property_name": "((#preserved_text - '§d§m§z§t§b§r§r§f') * 1)",
+              "target_property_name": "#thirst_value"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(((#collection_index - 10) * -2) - 1)",
+              "target_property_name": "#index"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#thirst_value > #index)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "thirsty_bar_data": {
+    "bindings": [
+      {
+        "binding_name": "#hud_title_text_string" 
+      },
+      {
+        "binding_name": "#hud_title_text_string",
+        "binding_name_override": "#preserved_text",
+        "binding_condition": "visibility_changed"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#hud_title_text_string = #preserved_text) and not ((#hud_title_text_string - '§d§m§z§t§b§r§r§f') = #hud_title_text_string))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "thirsty_bar_panel": {
+    "type": "panel",
+    "size": [ "100%cm", "100%cm" ],
+    "controls": [
+      {
+        "thirsty_bar": {
+          "type": "stack_panel",
+          "size": [ "100%c", "100%cm" ],
+          "orientation": "horizontal",
+          "collection_name": "thirsty_bar_items",
+          "factory": {
+            "name": "thirsty_bar_factory",
+            "control_name": "hud_ds-tbr.thirsty_bar_item",
+            "max_children_size": 10
+          },
+          "property_bag": {
+            "#thirst_bar_size": 10
+          },
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_property_name": "#thirst_bar_size",
+              "target_property_name": "#collection_length"
+            }
+          ]
+        }
+      },
+      {
+        "debug": {
+          "ignored": true,
+          "type": "label",
+          "text": "#text",
+          "layer": 10,
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "thirsty_bar_data_binding",
+              "source_property_name": "('thirst: ' + (#preserved_text - '§d§m§z§t§b§r§r§f'))",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#show_survival_ui",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "thirsty_bar_pocket": {
+    "type": "panel",
+    "size": [ "100%c", "100%c" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ -1.3, 12 ],
+    "controls": [
+      {
+        "thirsty_bar_panel@hud_ds-tbr.thirsty_bar_panel": {}
+      }
+    ]
+  },
+
+  "thirsty_bar": {
+    "type": "panel",
+    "size": [ "100%c", "100%c" ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ 1.4, -1 ],
+    "controls": [
+      {
+        "thirsty_bar_panel@hud_ds-tbr.thirsty_bar_panel": {}
+      }
+    ]
+  }
+}

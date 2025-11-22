@@ -1,0 +1,13 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:cooked_axolotl_bucket_2"
+    },
+    "components": {
+      "minecraft:icon": "bucketcustom2",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

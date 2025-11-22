@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:heathland/oak_leaves_fixed_single_block_feature"
+    },
+    "places_block": "minecraft:oak_leaves",
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_attach_to": {
+      "south": [
+        "minecraft:oak_leaves"
+      ],
+      "east": [
+        "minecraft:oak_leaves"
+      ]
+    }
+  }
+}

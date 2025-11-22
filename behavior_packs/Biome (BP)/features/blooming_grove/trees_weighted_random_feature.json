@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:blooming_grove/trees_weighted_random_feature"
+    },
+    "features": [
+      ["bioscape:blooming_grove/azalea_tree_with_flowered_feature", 95], 
+      ["bioscape:blooming_grove/birch_tree_feature", 20],
+      ["minecraft:birch_tree_feature", 15], 
+      ["minecraft:fallen_oak_tree_feature", 1]
+    ]
+  }
+}

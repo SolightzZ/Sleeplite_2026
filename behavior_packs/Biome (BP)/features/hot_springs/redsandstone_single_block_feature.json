@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/redsandstone_single_block_feature"
+    },
+    "places_block": "minecraft:red_sandstone",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:stone",
+      "minecraft:calcite",
+      "minecraft:gravel",
+      "minecraft:smooth_basalt",
+      "minecraft:blackstone",
+      "minecraft:magma",
+      "minecraft:coarse_dirt"
+    ],
+    "may_attach_to": {
+      "bottom": [
+        "minecraft:air",
+        "minecraft:water",
+        "minecraft:lava"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:blooming_grove/azalea_leaves_flowered_single_block_feature"
+    },
+    "places_block": {
+      "name": "minecraft:azalea_leaves_flowered"
+    },
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_replace": [
+      "minecraft:azalea_leaves"
+    ]
+  }
+}

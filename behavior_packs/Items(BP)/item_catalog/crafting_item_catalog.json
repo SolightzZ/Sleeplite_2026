@@ -1,0 +1,94 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "addon:light_block",
+              "icon": "minecraft:command_block"
+            },
+            "items": [
+              "minecraft:light_block_15",
+              "minecraft:command_block",
+              "minecraft:command_block_minecart",
+              "minecraft:structure_block",
+              "minecraft:barrier",
+              "minecraft:deny",
+              "minecraft:allow",
+              "minecraft:border_block"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "addon:equipment_heads",
+              "icon": "addon:SolightzZ"
+            },
+            "items": [
+              "addon:SolightzZ",
+              "addon:Cxnthiaz",
+              "addon:DAM0NZ17",
+              "addon:DeMonKung9987",
+              "addon:DoomyZazaz",
+              "addon:GuyyaReiki",
+              "addon:HENRY_TV_CHANEL",
+              "addon:Karto",
+              "addon:KinorlSAO",
+              "addon:KwanXD009",
+              "addon:Love_Bullet8722",
+              "addon:Momoi961277127",
+              "addon:NaraphatZ",
+              "addon:NEUMAXz",
+              "addon:Sekpongpipat258",
+              "addon:TaFlookXD",
+              "addon:Tawan8347T",
+              "addon:winosata2009",
+              "addon:XxsomponxX",
+              "addon:zeerza22"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "name": "addon:block_heads",
+              "icon": "addon:Cxnthiaz_block"
+            },
+            "items": [
+              "addon:SolightzZ_block",
+              "addon:Cxnthiaz_block",
+              "addon:DAM0NZ17_block",
+              "addon:DeMonKung9987_block",
+              "addon:DoomyZazaz_block",
+              "addon:GuyyaReiki_block",
+              "addon:HENRY_TV_CHANEL_block",
+              "addon:Karto_block",
+              "addon:KinorlSAO_block",
+              "addon:KwanXD009_block",
+              "addon:Love_Bullet8722_block",
+              "addon:Momoi961277127_block",
+              "addon:NaraphatZ_block",
+              "addon:NEUMAXz_block",
+              "addon:Sekpongpipat258_block",
+              "addon:TaFlookXD_block",
+              "addon:Tawan8347T_block",
+              "addon:winosata2009_block",
+              "addon:XxsomponxX_block",
+              "addon:zeerza22_block"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

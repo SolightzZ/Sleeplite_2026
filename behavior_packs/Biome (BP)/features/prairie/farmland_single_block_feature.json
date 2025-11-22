@@ -1,0 +1,25 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/farmland_single_block_feature"
+    },
+    "places_block": {
+      "name": "minecraft:farmland",
+      "states": {
+        "moisturized_amount": 7
+      }
+    },
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_attach_to": {
+      "top": [
+        "minecraft:air"
+      ]
+    },
+    "may_replace": [
+      "minecraft:grass",
+      "minecraft:dirt"
+    ]
+  }
+}

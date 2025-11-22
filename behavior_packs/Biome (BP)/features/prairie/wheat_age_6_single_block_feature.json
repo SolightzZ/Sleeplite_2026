@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/wheat_age_6_single_block_feature"
+    },
+    "places_block": {
+      "name": "minecraft:wheat",
+      "states": {
+        "growth": 6
+      }
+    },
+    "enforce_survivability_rules": true,
+    "enforce_placement_rules": true,
+    "may_replace": [
+      "minecraft:air"
+    ]
+  }
+}

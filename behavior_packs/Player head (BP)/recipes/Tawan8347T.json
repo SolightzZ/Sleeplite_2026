@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "addon:Tawan8347T_block"
+    },
+    "tags": ["crafting_table"],
+    "pattern": ["#"],
+    "key": {
+      "#": {
+        "item": "addon:Tawan8347T_block"
+      }
+    },
+    "unlock": [
+      {
+        "item": "addon:Tawan8347T"
+      }
+    ],
+    "result": {
+      "item": "addon:Tawan8347T",
+      "count": 1
+    }
+  }
+}

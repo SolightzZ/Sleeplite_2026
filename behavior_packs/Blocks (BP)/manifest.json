@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[1] Blocks",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "e3483b8b-0759-4a77-bbd0-b6e4f620a5e8",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [1, 0, 2],
+      "type": "data",
+      "uuid": "4c39bedb-3107-48d5-b3e5-91ef41e6a683"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "42f36753-b161-416e-9eb7-494fc662976a",
+      "version": [1, 0, 1]
+    }
+  ]
+}

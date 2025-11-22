@@ -1,0 +1,55 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "bioscape:pumpkin_valley/pumpkin_stem_feature"
+    },
+    "acacia_trunk": {
+      "trunk_width": 1,
+      "trunk_height": {
+        "base": 2,
+        "intervals": [ 1 ],
+        "min_height_for_canopy": 1
+      },
+      "trunk_block": {
+        "name": "minecraft:oak_log"
+      },
+      "trunk_lean": {
+        "allow_diagonal_growth": false,
+        "lean_height": 1,
+        "lean_steps": 1
+      }
+    },
+    "random_spread_canopy": {
+      "canopy_height": 2,
+      "canopy_radius": 2,
+      "leaf_placement_attempts": 10,
+      "leaf_blocks": [
+        [ "minecraft:oak_leaves", 1 ]
+      ]
+    },
+    "may_grow_on": [
+      "minecraft:pumpkin"
+    ],
+    "base_block": [
+      "minecraft:pumpkin"
+    ],
+    "may_grow_through": [
+      "minecraft:pumpkin"
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "minecraft:snow_layer",
+      "minecraft:acacia_leaves",
+      "minecraft:azalea_leaves",
+      "minecraft:azalea_leaves_flowered",
+      "minecraft:birch_leaves",
+      "minecraft:dark_oak_leaves",
+      "minecraft:jungle_leaves",
+      "minecraft:mangrove_leaves",
+      "minecraft:oak_leaves",
+      "minecraft:pale_oak_leaves",
+      "minecraft:spruce_leaves"
+    ]
+  }
+}

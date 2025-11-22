@@ -1,0 +1,13 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:festival2"
+    },
+    "components": {
+      "minecraft:icon": "festival2",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

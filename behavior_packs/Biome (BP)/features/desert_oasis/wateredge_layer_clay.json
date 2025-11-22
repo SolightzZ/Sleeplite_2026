@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/wateredge_layer_clay"
+    },
+    "places_feature": "bioscape:desert_oasis/clay_single_block_feature",
+    "iterations": 100,
+    "x": {
+      "distribution": "uniform",
+      "extent": [-2, 3]
+    },
+    "z": {
+      "distribution": "uniform",
+      "extent": [-2, 3]
+    },
+    "y": {
+      "distribution": "uniform",
+      "extent": [-2, 2]
+    }
+  }
+}

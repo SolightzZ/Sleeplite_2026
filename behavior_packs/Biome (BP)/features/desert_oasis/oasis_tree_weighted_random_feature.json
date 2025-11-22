@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:weighted_random_feature": {
+    "description": {
+      "identifier": "bioscape:desert_oasis/oasis_tree_weighted_random_feature"
+    },
+    "features": [
+      [ "bioscape:desert_oasis/big_oasis_tree_feature", 1 ],
+      [ "bioscape:desert_oasis/medium_oasis_tree_feature", 5 ], 
+      [ "bioscape:desert_oasis/small_oasis_tree_feature", 2 ]
+    ]
+  }
+}

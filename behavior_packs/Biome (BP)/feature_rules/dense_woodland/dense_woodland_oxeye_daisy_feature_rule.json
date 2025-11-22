@@ -1,0 +1,43 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:dense_woodland_oxeye_daisy_feature_rule",
+      "places_feature": "bioscape:dense_woodland/oxeye_daisy_scatter_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+        	"any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "dense_woodland"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "temperate_birch"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 4,
+      "x": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [ 0, "q.heightmap(v.worldx, v.worldz) + 32" ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      }
+    }
+  }
+}

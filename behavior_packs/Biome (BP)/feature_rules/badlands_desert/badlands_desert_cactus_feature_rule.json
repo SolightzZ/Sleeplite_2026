@@ -1,0 +1,32 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "bioscape:badlands_desert_cactus_feature_rule",
+      "places_feature": "bioscape:badlands_desert/cactus_snap_to_floor_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "badlands_desert"
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 2,
+      "scatter_chance": 30,
+      "x": {
+        "distribution": "gaussian",
+        "extent": [ -8, 24 ]
+      },
+      "y": "q.heightmap(v.worldx, v.worldz)",
+      "z": {
+        "distribution": "gaussian",
+        "extent": [ -8, 24 ]
+      }
+    }
+  }
+}

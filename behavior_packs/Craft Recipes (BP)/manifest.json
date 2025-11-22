@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[2] Craft and Recipes",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "cbfeb865-0f0a-4108-8c9b-b9e4ed69d30a",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 60]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "type": "data",
+      "uuid": "60d3600e-0cd3-4c46-a521-39efaa5c2d50",
+      "version": [1, 0, 2]
+    }
+  ]
+}

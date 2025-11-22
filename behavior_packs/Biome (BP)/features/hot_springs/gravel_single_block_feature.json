@@ -1,0 +1,24 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/gravel_single_block_feature"
+    },
+    "places_block": "minecraft:gravel",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_replace": [
+      "minecraft:calcite",
+      "minecraft:stone",
+      "minecraft:magma",
+      "minecraft:coarse_dirt"
+    ],
+    "may_attach_to": {
+      "bottom": [
+        "minecraft:stone",
+        "minecraft:calcite",
+        "minecraft:gravel"
+      ]
+    }
+  }
+}

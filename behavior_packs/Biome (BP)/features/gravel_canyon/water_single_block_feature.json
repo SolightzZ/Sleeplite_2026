@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.0", 
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:gravel_canyon/water_single_block_feature"
+    },
+    "places_block": "minecraft:water",
+    "enforce_placement_rules": false,
+    "enforce_survivability_rules": false,
+    "may_attach_to": {
+      "min_sides_must_attach": 4,
+      "sides": [
+        "minecraft:grass",
+        "minecraft:deepslate",
+        "minecraft:tuff", 
+        "minecraft:gravel", 
+        "minecraft:water",
+        "minecraft:magma"
+      ],
+      "bottom": [
+        "minecraft:grass",
+        "minecraft:deepslate",
+        "minecraft:tuff", 
+        "minecraft:gravel", 
+        "minecraft:water",
+        "minecraft:magma"
+      ]
+    },
+    "may_replace": [
+      "minecraft:deepslate",
+      "minecraft:tuff",
+      "minecraft:water",
+      "minecraft:magma"
+    ]
+  }
+}

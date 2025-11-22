@@ -1,0 +1,275 @@
+{
+  //---------------------------------------------------------------------------
+  // Thirsty Bar
+  //---------------------------------------------------------------------------
+
+  "item_name_text_root/item_text_aligner/survival_buffer": {
+    "bindings": [
+      {
+        "binding_name": "#show_survival_ui",
+        "binding_name_override": "#visible"
+      },
+      {
+        "binding_name": "#is_armor_visible"
+      },
+      {
+        "binding_name": "#hud_visible_centered"
+      },
+      {
+        "binding_name": "#hud_visible_centered_touch"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#is_armor_visible and (#hud_visible_centered or #hud_visible_centered_touch))",
+        "target_property_name": "#survival_buffer"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(((1 - #survival_buffer) * 27) + (#survival_buffer * 17))",
+        "target_property_name": "#size_binding_y_absolute"
+      }
+    ]
+  },
+
+  "hud_title_text/title_frame": {
+    "$is_dimz_durability_armor_viewer|default": false,
+    "$is_dimz_nearby_mobs|default": false,
+    "variables": [
+      {
+        "requires": "($is_dimz_durability_armor_viewer or $is_dimz_nearby_mobs)",
+        "$title_text_binding": "((#hud_title_text_string - '§d§m§z§t§b§r§r§f' - '§d§m§z§n§m§s§r§f' - '§d§m§z§c§a§b§r§f' - '§d§m§z§d§a§v§r§f') = #hud_subtitle_text_string)"
+      }
+    ],
+    "$title_text_binding|default": "((#hud_title_text_string - '§d§m§z§t§b§r§r§f') = #hud_title_text_string)",
+    "bindings": [
+      { "binding_name": "#hud_title_text_string" },
+      {
+        "binding_type": "view",
+        "source_property_name": "$title_text_binding",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "not_centered_gui_elements/horse_heart_rend": {
+    "offset": [-2, 12]
+  },
+
+  "not_centered_gui_elements/bubbles_rend_0": {
+    "offset": [-2, 22]
+  },
+
+  "not_centered_gui_elements": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": {
+          "thirsty_bar@hud_ds-tbr.thirsty_bar_pocket": {}
+        }
+      }
+    ]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch/horse_heart_rend_0": {
+    "offset": [200, -66]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch/horse_heart_rend_1": {
+    "offset": [200, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch/bubbles_rend_0": {
+    "offset": [200, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch/bubbles_rend_1": {
+    "offset": [200, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": {
+          "thirsty_bar@hud_ds-tbr.thirsty_bar": {}
+        }
+      }
+    ]
+  },
+
+  "centered_gui_elements_at_bottom_middle/horse_heart_rend_0": {
+    "offset": [180, -66]
+  },
+
+  "centered_gui_elements_at_bottom_middle/horse_heart_rend_1": {
+    "offset": [180, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle/bubbles_rend_0": {
+    "offset": [180, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle/bubbles_rend_1": {
+    "offset": [180, -60]
+  },
+
+  "centered_gui_elements_at_bottom_middle": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": {
+          "thirsty_bar@hud_ds-tbr.thirsty_bar": {}
+        }
+      }
+    ]
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "thirsty_bar_data_binding@hud_ds-tbr.thirsty_bar_data": {
+            "type": "panel",
+            "size": [0, 0]
+          }
+        }
+      }
+    ]
+  },
+
+  //---------------------------------------------------------------------------
+  // Hhud Title Text
+  //---------------------------------------------------------------------------
+
+  "hud_title_text": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "offset": [0, -80],
+    "layer": 1,
+    "alpha": "@hud.anim_title_text_alpha_in",
+    "propagate_alpha": true,
+    "controls": [
+      {
+        "title_frame": {
+          "type": "panel",
+          "size": ["100%", "100%cm"],
+          "controls": [
+            {
+              "title_background": {
+                "type": "image",
+                "size": ["100%sm + 20px", "100%sm + 4px"],
+                "texture": "textures/ui/hud_tip_text_background",
+                "alpha": "@hud.anim_title_background_alpha_in"
+              }
+            },
+            {
+              "title": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "color": "$title_command_text_color",
+                "text": "#text",
+                "layer": 31,
+                "localize": false,
+                "font_size": "extra_large",
+                "variables": [
+                  {
+                    "requires": "(not $title_shadow)",
+                    "$show_shadow": false
+                  },
+                  {
+                    "requires": "$title_shadow",
+                    "$show_shadow": true
+                  }
+                ],
+                "shadow": "$show_shadow",
+                "text_alignment": "center",
+                "offset": [0, 6],
+                "bindings": [
+                  {
+                    "binding_name": "#hud_title_text_string",
+                    "binding_name_override": "#text",
+                    "binding_type": "global"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "subtitle_frame": {
+          "type": "panel",
+          "size": ["100%", "100%cm"],
+          "controls": [
+            {
+              "subtitle_background": {
+                "type": "image",
+                "size": ["100%sm + 14px", "100%sm + 5px"],
+                "offset": [0, 16],
+                "texture": "textures/ui/hud_tip_text_background",
+                "variables": [
+                  {
+                    "requires": "$subtitle_initially_visible",
+                    "$subtitle_bg": "@hud.anim_title_background_alpha_in"
+                  },
+                  {
+                    "requires": "(not $subtitle_initially_visible)",
+                    "$subtitle_bg": "@hud.anim_subtitle_background_alpha_in"
+                  }
+                ],
+                "alpha": "$subtitle_bg"
+              }
+            },
+            {
+              "subtitle": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "color": "$title_command_text_color",
+                "text": "#text",
+                "layer": 31,
+                "localize": false,
+                "font_size": "large",
+                "variables": [
+                  {
+                    "requires": "$subtitle_initially_visible",
+                    "$anim_type": 1.0
+                  },
+                  {
+                    "requires": "(not $subtitle_initially_visible)",
+                    "$anim_type": "@hud.anim_subtitle_text_alpha_in"
+                  },
+                  {
+                    "requires": "(not $title_shadow)",
+                    "$show_shadow": false
+                  },
+                  {
+                    "requires": "$title_shadow",
+                    "$show_shadow": true
+                  }
+                ],
+                "shadow": "$show_shadow",
+                "alpha": "$anim_type",
+                "text_alignment": "center",
+                "offset": [1, 19],
+                "bindings": [
+                  {
+                    "binding_name": "#hud_subtitle_text_string",
+                    "binding_name_override": "#text",
+                    "binding_type": "global"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

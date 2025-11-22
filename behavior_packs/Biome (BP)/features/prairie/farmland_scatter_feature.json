@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "bioscape:prairie/farmland_scatter_feature"
+    },
+    "iterations": 512,
+    "x": {
+      "extent": [ -16, 32 ],
+      "distribution": "gaussian"
+    },
+    "z": {
+      "extent": [ -16, 32 ],
+      "distribution": "gaussian"
+    },
+    "y": "q.heightmap(v.worldx, v.worldz) - 1",
+    "places_feature": "bioscape:prairie/farmland_with_wheat_feature"
+  }
+}

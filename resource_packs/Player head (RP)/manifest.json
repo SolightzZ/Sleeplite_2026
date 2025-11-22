@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[5] Player head (RP)",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "17b5d028-7f58-40c0-9ba5-34a7716f9adc",
+    "pack_scope": "world",
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "(RP)",
+      "type": "resources",
+      "uuid": "5e528823-af95-4a52-9644-41600a15891e",
+      "version": [1, 0, 2]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 0
+    },
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 1
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "e09793a5-dcc2-4da0-a532-21345bc2c3fa",
+      "version": [1, 0, 0]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "authors": ["Alien Edds Gaming"],
+    "product_type": "addon"
+  },
+  "header": {
+    "description": "pack.description",
+    "name": "[9] Animation Tools",
+    "uuid": "05e05ad4-7c21-4f49-a367-67dc85e51ca0",
+    "min_engine_version": [1, 21, 80],
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "b2144765-bde0-4a4c-a892-8eb16a9c91e4",
+      "version": [1, 0, 0]
+    }
+  ]
+}

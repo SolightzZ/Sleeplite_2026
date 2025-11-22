@@ -1,0 +1,12 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:aggregate_feature": {
+    "description": {
+      "identifier": "bioscape:hot_springs/multibiome_layers_wateredge"
+    },
+    "features": [
+      "bioscape:desert_oasis/layers_wateredge",
+      "bioscape:hot_springs/layers_wateredge"
+    ]
+  }
+}

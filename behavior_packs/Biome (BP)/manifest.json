@@ -1,0 +1,28 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[7] BioScape",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "71e63cd6-76f5-4455-bd95-2e86d7cc5d1a",
+    "version": [2, 1, 0],
+    "min_engine_version": [1, 21, 100]
+  },
+  "metadata": {
+    "authors": ["BioScape  V.2.1.0"],
+    "product_type": "addon"
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [2, 1, 0],
+      "uuid": "2a0421b4-a26e-4e97-898e-8573eed796d5",
+      "type": "data"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "42f36753-b161-416e-9eb7-494fc662976a",
+      "version": [2, 1, 0]
+    }
+  ]
+}

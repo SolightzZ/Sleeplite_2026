@@ -1,0 +1,121 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "bioscape:amethyst_canyon"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.5,
+        "snow_accumulation": [0.0, 0.125],
+        "temperature": 0.5
+      },
+      "minecraft:surface_builder": {
+        "builder": {
+          "type": "minecraft:overworld",
+          "sea_floor_depth": 7,
+          "sea_floor_material": "minecraft:gravel",
+          "foundation_material": "minecraft:blackstone",
+          "mid_material": "minecraft:blackstone",
+          "top_material": "minecraft:blackstone",
+          "sea_material": "minecraft:water"
+        }
+      },
+      "minecraft:surface_material_adjustments": {
+        "adjustments": [
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [0.25, 1.0]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [0.075, 0.15]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.1, -0.025]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.3, -0.2]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.5, -0.4]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.65, -0.6]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:polished_blackstone",
+              "top_material": "minecraft:polished_blackstone"
+            },
+            "noise_frequency_scale": 0.6,
+            "noise_range": [-0.9, -0.875]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:amethyst_block",
+              "top_material": "minecraft:amethyst_block"
+            },
+            "noise_frequency_scale": 0.1,
+            "noise_range": [0.2, 1.0]
+          },
+          {
+            "materials": {
+              "mid_material": "minecraft:calcite",
+              "top_material": "minecraft:calcite"
+            },
+            "noise_frequency_scale": 0.1,
+            "noise_range": [0.1, 0.2]
+          }
+        ]
+      },
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "minecraft:overworld",
+            "targets": [
+              "minecraft:extreme_hills",
+              "minecraft:extreme_hills_edge",
+              "minecraft:extreme_hills_mutated",
+              "minecraft:extreme_hills_plus_trees",
+              "minecraft:extreme_hills_plus_trees_mutated"
+            ],
+            "amount": 0.4,
+            "noise_frequency_scale": 0.2
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": ["amethyst_canyon", "overworld", "caves", "bioscape", "spawns_cold_variant_farm_animals"]
+      }
+    }
+  }
+}

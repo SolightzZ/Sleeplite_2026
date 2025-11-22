@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[4] Javascripts",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "443064b6-27d1-467c-b432-01a3e852a2c5",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "type": "data",
+      "uuid": "8a056c7b-e65b-48ee-ae9f-3b173976a29e",
+      "version": [1, 0, 2]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "07416640-971c-4d74-a01b-943667c8ee4d",
+      "version": [1, 21, 90],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.4.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.1.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-admin",
+      "version": "1.0.0-beta"
+    }
+  ]
+}

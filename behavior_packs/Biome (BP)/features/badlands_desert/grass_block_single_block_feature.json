@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "bioscape:badlands_desert/grass_block_single_block_feature"
+    },
+    "places_block": "minecraft:grass_block",
+    "enforce_survivability_rules": false,
+    "enforce_placement_rules": false,
+    "may_replace": [
+      "minecraft:red_sand"
+    ]
+  }
+}

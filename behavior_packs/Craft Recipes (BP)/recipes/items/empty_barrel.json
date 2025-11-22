@@ -1,0 +1,18 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "dustydecorations:empty_barrel"
+    },
+    "tags": ["avanced"],
+    "key": {
+      "#": {
+        "item": "minecraft:barrel"
+      }
+    },
+    "pattern": ["   ", " # ", "   "],
+    "result": {
+      "item": "dustydecorations:empty_barrel"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+export const FOOD_DATA_LIST = [
+  { id: "minecraft:potion", restoration: 0, saturation: 0, thirst: +4 },
+  { id: "minecraft:apple", restoration: 4, saturation: 2.4, thirst: +1.2 },
+  { id: "minecraft:baked_potato", restoration: 5, saturation: 6, thirst: -1 },
+  { id: "minecraft:beetroot", restoration: 1, saturation: 1.2, thirst: +0.7 },
+  { id: "minecraft:beetroot_soup", restoration: 6, saturation: 7.2, thirst: +2 },
+  { id: "minecraft:bread", restoration: 5, saturation: 6, thirst: -1 },
+  { id: "minecraft:cake", restoration: 0, saturation: 0, thirst: -1 },
+  { id: "minecraft:carrot", restoration: 3, saturation: 3.6, thirst: +0.7 },
+  { id: "minecraft:chorus_fruit", restoration: 4, saturation: 2.4, thirst: +0.7 },
+  { id: "minecraft:cooked_chicken", restoration: 6, saturation: 7.2, thirst: -2 },
+  { id: "minecraft:cooked_cod", restoration: 5, saturation: 6, thirst: -1.6 },
+  { id: "minecraft:cooked_mutton", restoration: 6, saturation: 9.6, thirst: -2.5 },
+  { id: "minecraft:cooked_porkchop", restoration: 8, saturation: 12.8, thirst: -3 },
+  { id: "minecraft:cooked_rabbit", restoration: 5, saturation: 6, thirst: -1.5 },
+  { id: "minecraft:cooked_salmon", restoration: 6, saturation: 9.6, thirst: -1.6 },
+  { id: "minecraft:cookie", restoration: 2, saturation: 0.4, thirst: -0.3 },
+  { id: "minecraft:dried_kelp", restoration: 1, saturation: 0.2, thirst: -0.3 },
+  { id: "minecraft:enchanted_golden_apple", restoration: 4, saturation: 9.6, thirst: +3 },
+  { id: "minecraft:glow_berries", restoration: 2, saturation: 0.4, thirst: +3 },
+  { id: "minecraft:golden_apple", restoration: 4, saturation: 9.6, thirst: +1 },
+  { id: "minecraft:golden_carrot", restoration: 6, saturation: 14.4, thirst: +1.5 },
+  { id: "minecraft:honey_bottle", restoration: 6, saturation: 1.2, thirst: -0.7 },
+  { id: "minecraft:melon_slice", restoration: 2, saturation: 1.2, thirst: -10 },
+  { id: "minecraft:mushroom_stew", restoration: 6, saturation: 7.2, thirst: +2 },
+  { id: "minecraft:poisonous_potato", restoration: 2, saturation: 1.2, thirst: +0.5 },
+  { id: "minecraft:potato", restoration: 1, saturation: 0.6, thirst: +0.5 },
+  { id: "minecraft:pufferfish", restoration: 1, saturation: 0.28, thirst: -0.5 },
+  { id: "minecraft:pumpkin_pie", restoration: 8, saturation: 4.8, thirst: -2 },
+  { id: "minecraft:rabbit_stew", restoration: 10, saturation: 12, thirst: +2 },
+  { id: "minecraft:beef", restoration: 3, saturation: 1.8, thirst: -1.5 },
+  { id: "minecraft:chicken", restoration: 2, saturation: 1.2, thirst: -1 },
+  { id: "minecraft:cod", restoration: 2, saturation: 0.4, thirst: -1 },
+  { id: "minecraft:mutton", restoration: 2, saturation: 1.2, thirst: -1 },
+  { id: "minecraft:porkchop", restoration: 3, saturation: 1.8, thirst: -1.5 },
+  { id: "minecraft:rabbit", restoration: 3, saturation: 1.8, thirst: -1.5 },
+  { id: "minecraft:salmon", restoration: 2, saturation: 0.4, thirst: -0.5 },
+  { id: "minecraft:rotten_flesh", restoration: 4, saturation: 0.86, thirst: -3 },
+  { id: "minecraft:spider_eye", restoration: 2, saturation: 3.22, thirst: -3 },
+  { id: "minecraft:cooked_beef", restoration: 8, saturation: 12.8, thirst: -2 },
+  { id: "minecraft:suspicious_stew", restoration: 6, saturation: 7.2, thirst: +2 },
+  { id: "minecraft:sweet_berries", restoration: 2, saturation: 1.2, thirst: +1 },
+  { id: "minecraft:tropical_fish", restoration: 1, saturation: 0.2, thirst: -0.5 },
+  { id: "addon:water_bottle", restoration: 0, saturation: 0, thirst: +3 },
+];
+
+export const COLOR_RESTORATION = "§r§c";
+export const COLOR_SATURATION = "§r§6";
+export const COLOR_THIRST = "§r§b";
+export const LORE_RESTORATION = "การฟื้นฟู";
+export const LORE_SATURATION = "ความอิ่ม";
+export const LORE_THIRST = "กระหายน้ำ";

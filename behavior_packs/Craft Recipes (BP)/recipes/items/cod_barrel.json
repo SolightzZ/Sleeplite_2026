@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "dustydecorations:cod_barrel"
+    },
+    "tags": ["avanced"],
+    "key": {
+      "#": {
+        "item": "minecraft:cod"
+      },
+      "*": {
+        "item": "minecraft:barrel"
+      }
+    },
+    "pattern": ["   ", "###", " * "],
+    "result": {
+      "item": "dustydecorations:cod_barrel"
+    }
+  }
+}
