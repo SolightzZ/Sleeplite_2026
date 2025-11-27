@@ -13,6 +13,7 @@
       "minecraft:food": {
         "nutrition": 3,
         "saturation_modifier": "poor",
+        "can_always_eat": false,
         "effects": [
           {
             "name": "hunger",

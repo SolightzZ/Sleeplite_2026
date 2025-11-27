@@ -1,20 +1,15 @@
 export const Colors = { gold: "§6", white: "§f", gray: "§7", red: "§c" };
 
-export const AnimationFrames = ["--", "-- --", "-- D --", "-- DAY --"];
-export const getDayText = (day) => `-- DAY ${day} --`;
-
-export const MAX_PER_FOOD = 8;
-
-export const DP = {
-  RESET_FLAG: "food:reset:v1",
-  FEATURE_ANIM: "food:feature:anim",
-  FEATURE_BROADCAST: "food:feature:broadcast",
+export const SYSTEM_CONFIG = {
+  CHECK_INTERVAL: 512,
+  MAX_UI_OPS: 200,
+  BROADCAST_GAP: 30,
+  METRICS_INTERVAL: 2400,
 };
 
-export const CHECK_INTERVAL = 512;
-export const MAX_UI_OPS_PER_TICK = 200;
-export const BROADCAST_MIN_GAP_TICKS = 30;
-export const METRICS_FLUSH_EVERY_TICKS = 2400;
+export const FOOD_CONFIG = {
+  MAX_PER_DAY: 8,
+};
 
 export const FOOD_LIST = [
   "minecraft:apple",
@@ -79,11 +74,13 @@ export const FOOD_LIST = [
 ];
 
 export const FOOD_SET = new Set(FOOD_LIST);
+
 export const FOOD_DISPLAY_NAME = (() => {
   const m = new Map();
   for (const id of FOOD_LIST) {
     const raw = id.split(":").pop() ?? id;
-    m.set(id, raw.charAt(0).toUpperCase() + raw.slice(1));
+    const formatted = raw.charAt(0).toUpperCase() + raw.slice(1).replace(/_/g, " ");
+    m.set(id, formatted);
   }
   return m;
 })();

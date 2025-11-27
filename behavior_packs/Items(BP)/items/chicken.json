@@ -9,6 +9,7 @@
       "minecraft:food": {
         "nutrition": 2,
         "saturation_modifier": "low",
+        "can_always_eat": false,
         "effects": [
           {
             "name": "hunger",

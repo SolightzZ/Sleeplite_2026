@@ -6,6 +6,7 @@ export function getBiomeIdAtLocation(player) {
   try {
     return player.dimension.getBiome(player.location)?.id ?? null;
   } catch (e) {
+    console.warn("GetBiomeIdAtLocation" + e);
     return null;
   }
 }

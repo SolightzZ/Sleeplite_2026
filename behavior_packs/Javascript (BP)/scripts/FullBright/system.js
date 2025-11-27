@@ -1,22 +1,11 @@
-import { world } from "@minecraft/server";
-import { disableFullBright } from "./database.js";
+import { showFullBrightMenu } from "./functions.js";
+import { FullBrightonEntityDeath, FullBrightonPlayerLeave } from "./database.js";
+import { system } from "@minecraft/server";
 
-export function FullBrightonPlayerLeave(event) {
-  const playerId = event.playerId;
-  if (typeof playerId !== "string") return;
-
-  try {
-    const player = world.getEntity(playerId);
-    if (player?.typeId === "minecraft:player") {
-      disableFullBright(player);
-    }
-  } catch (err) {
-    console.warn(`[FullBright] Cleanup failed for ${playerId}: ${err}`);
-  }
+export function FullBrightItemUse({ source: player }) {
+  system.run(() => showFullBrightMenu(player));
 }
 
-export function FullBrightonEntityDeath({ deadEntity: entity }) {
-  if (entity?.typeId === "minecraft:player") {
-    disableFullBright(entity);
-  }
-}
+export { FullBrightonEntityDeath, FullBrightonPlayerLeave };
+
+console.warn("Full Bright loaded successfully");

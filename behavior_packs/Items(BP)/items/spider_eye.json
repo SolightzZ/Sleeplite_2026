@@ -11,6 +11,7 @@
       "minecraft:food": {
         "nutrition": 2,
         "saturation_modifier": "good",
+        "can_always_eat": false,
         "effects": [
           {
             "name": "poison",

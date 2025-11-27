@@ -2,8 +2,8 @@ import { Player } from "@minecraft/server";
 
 import { showCameraMenu } from "./Camera/system.js";
 import { emote_main } from "./Emote/system.js";
-import { FullBrightItemUse } from "./FullBright/functions.js";
-import { openMagnetMenuScriptEvent } from "./magnet/functions.js";
+import { FullBrightItemUse } from "./FullBright/system.js";
+import { MagnetonScriptEvent } from "./magnet/functions.js";
 import { mainBanSystem } from "./ban/system.js";
 import { onRewardItemUse } from "./Reward/system.js";
 import { setting_main } from "./Others/setting.js";
@@ -16,7 +16,7 @@ const ITEM_ACTIONS = {
   "addon:cam": showCameraMenu,
   "addon:emote": emote_main,
   "addon:fullbright_": FullBrightItemUse,
-  "addon:magnet_": openMagnetMenuScriptEvent,
+  "addon:magnet_": MagnetonScriptEvent,
   "minecraft:barrier": mainBanSystem,
   "addon:trade": onRewardItemUse,
   "addon:bank": bankingSystem,
@@ -25,16 +25,17 @@ const ITEM_ACTIONS = {
 };
 
 export function onItemUse(e) {
-  const { source, itemStack } = e;
-  if (!(source instanceof Player)) return;
-  if (!itemStack) return;
-
-  const action = ITEM_ACTIONS[itemStack.typeId];
-  if (!action) return;
-
   try {
+    const { source, itemStack } = e;
+    if (!(source instanceof Player)) return;
+    if (!itemStack) return;
+
+    const action = ITEM_ACTIONS[itemStack.typeId];
+    if (!action) return;
+
     action(e);
   } catch (err) {
     console.warn(`[itemUse] handler error: ${err}`);
   }
 }
+console.warn("[world afterEvents itemUse] loaded successfully");

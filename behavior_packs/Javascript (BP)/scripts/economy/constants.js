@@ -1,5 +1,3 @@
-// scripts/constants.js
-
 export const CONFIG = {
   BANK_DB_NAME: "Banking",
   BANK_DISPLAY_NAME: "Banking",

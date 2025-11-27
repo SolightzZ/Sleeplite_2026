@@ -152,7 +152,7 @@ function saveCameraTemplate(player, duration, easeName, x, y, z, rotationX, rota
     player.onScreenDisplay.setActionBar(`บันทึกเทมเพลตสำเร็จ: ${name}`);
   } catch (e) {
     player.sendMessage("Template save failed");
-    console.warn(`Template save failed: ${e}`);
+    console.warn(`Template save failed: ` + e);
   }
 }
 

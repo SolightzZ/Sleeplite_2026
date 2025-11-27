@@ -3,13 +3,12 @@ import { transferPlayer } from "@minecraft/server-admin";
 import { SERVER_LIST, MESSAGES } from "./constants.js";
 
 export function showServerMenu(player) {
-  const form = new ActionFormData().title("เลือกเซิร์ฟเวอร์");
-  SERVER_LIST.forEach((s) => form.button(s.displayName, s.iconTexture || "textures/items/xbox4"));
-  form.button("กรอก IP ด้วยตัวเอง");
+  try {
+    const form = new ActionFormData().title("เลือกเซิร์ฟเวอร์");
+    SERVER_LIST.forEach((s) => form.button(s.displayName, s.iconTexture || "textures/items/xbox4"));
+    form.button("กรอก IP ด้วยตัวเอง");
 
-  form
-    .show(player)
-    .then((response) => {
+    form.show(player).then((response) => {
       if (response.canceled) return;
 
       const idx = response.selection;
@@ -19,16 +18,17 @@ export function showServerMenu(player) {
       } else {
         showCustomServerInput(player);
       }
-    })
-    .catch(console.warn);
+    });
+  } catch (error) {
+    console.warn("showServerMenu", error);
+  }
 }
 
 export function showCustomServerInput(player) {
-  const form = new ModalFormData().title("กรอกเซิร์ฟเวอร์").textField("IP Address:", "เช่น 192.168.0.1").textField("Port Number:", "เช่น 19132");
+  try {
+    const form = new ModalFormData().title("กรอกเซิร์ฟเวอร์").textField("IP Address:", "เช่น 192.168.0.1").textField("Port Number:", "เช่น 19132");
 
-  form
-    .show(player)
-    .then((response) => {
+    form.show(player).then((response) => {
       if (response.canceled) return;
 
       const [ipAddress, portString] = response.formValues;
@@ -39,20 +39,21 @@ export function showCustomServerInput(player) {
       }
 
       showConfirmationMenu(player, "เซิร์ฟเวอร์ที่กำหนดเอง", ipAddress, portNumber);
-    })
-    .catch(console.warn);
+    });
+  } catch (error) {
+    console.warn("showCustomServerInput", error);
+  }
 }
 
 export function showConfirmationMenu(player, serverName, ipAddress, portNumber) {
-  const form = new ActionFormData()
-    .title("ยืนยันการเชื่อมต่อ")
-    .body(`§7ชื่อเซิร์ฟเวอร์: ${serverName}\nIP Address: ${ipAddress}\n§7Port Number: ${portNumber}`)
-    .button("ตกลง")
-    .button("กลับ");
+  try {
+    const form = new ActionFormData()
+      .title("ยืนยันการเชื่อมต่อ")
+      .body(`§7ชื่อเซิร์ฟเวอร์: ${serverName}\nIP Address: ${ipAddress}\n§7Port Number: ${portNumber}`)
+      .button("ตกลง")
+      .button("กลับ");
 
-  form
-    .show(player)
-    .then((response) => {
+    form.show(player).then((response) => {
       if (response.canceled) return;
 
       if (response.selection === 0) {
@@ -60,8 +61,10 @@ export function showConfirmationMenu(player, serverName, ipAddress, portNumber) 
       } else {
         showServerMenu(player);
       }
-    })
-    .catch(console.warn);
+    });
+  } catch (error) {
+    console.warn("showConfirmationMenu", error);
+  }
 }
 
 export function transferPlayerToServer(player, ipAddress, portNumber) {

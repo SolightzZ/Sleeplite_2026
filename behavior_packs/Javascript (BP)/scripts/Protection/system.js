@@ -165,3 +165,4 @@ world.beforeEvents.playerInteractWithEntity.subscribe(handleEntityInteractPreEve
 world.beforeEvents.explosion.subscribe(handleExplosionPreEvent);
 
 system.run(() => zoneDatabase.loadAllZonesFromStorage());
+console.warn("Protection loaded successfully");

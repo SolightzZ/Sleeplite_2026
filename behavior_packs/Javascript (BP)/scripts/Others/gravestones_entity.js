@@ -8,8 +8,9 @@ export function onGravestoneInteract(event) {
   system.runTimeout(() => {
     try {
       target.kill();
-    } catch {
-      console.warn("[Gravestone] Failed to remove gravestone entity.");
+    } catch (e) {
+      console.warn("[Gravestone] Failed" + e);
     }
   }, 2);
 }
+console.warn("Gravestone Interact loaded successfully");

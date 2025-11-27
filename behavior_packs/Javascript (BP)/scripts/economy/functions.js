@@ -1,5 +1,3 @@
-// scripts/functions.js
-
 import { world, Player, ItemStack } from "@minecraft/server";
 import { CONFIG, DEFAULTS, MESSAGES } from "./constants.js";
 import { getBalance, setBalance, addBalance, removeBalance, getInterestDate, setInterestDate, initializeInterest } from "./database.js";

@@ -40,3 +40,5 @@ export function inv_main(event) {
 
   system.run(() => handleInventoryCommand({ command, mode, player }));
 }
+
+console.warn("Inventory Sorter loaded successfully");

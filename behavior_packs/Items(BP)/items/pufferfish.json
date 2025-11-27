@@ -13,6 +13,7 @@
       "minecraft:food": {
         "nutrition": 1,
         "saturation_modifier": "poor",
+        "can_always_eat": false,
         "effects": [
           {
             "name": "poison",
@@ -20,7 +21,7 @@
             "amplifier": 3
           },
           {
-            "name": "nausea", // confusion
+            "name": "nausea",
             "duration": 15,
             "amplifier": 1
           },

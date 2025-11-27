@@ -53,7 +53,7 @@ export function privates(event) {
       }
     } catch (e) {
       player.sendMessage("§c[x] เกิดข้อผิดพลาดในการส่งข้อความ");
-      console.warn(`Error in private message system: ${e}`);
+      console.warn("Error in private message system:" + e);
     }
   });
 }

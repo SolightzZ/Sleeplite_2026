@@ -13,6 +13,7 @@
         "nutrition": 10,
         "saturation_modifier": "normal",
         "using_converts_to": "bowl",
+        "can_always_eat": false,
         "effects": [
           {
             "name": "regeneration",

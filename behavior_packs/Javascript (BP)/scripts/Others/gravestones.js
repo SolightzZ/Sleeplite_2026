@@ -71,9 +71,10 @@ export function gravestone_main({ deadEntity: deadPlayer }) {
     if (added) {
       try {
         drop.remove();
-      } catch {
-        console.warn("[Gravestone] Failed to remove dropped item entity.");
+      } catch (e) {
+        console.warn("[Gravestone] Failed" + e);
       }
     }
   }
 }
+console.warn("Gravestone loaded successfully");

@@ -25,7 +25,7 @@ function addDeathScore(player) {
     objPlus?.addScore(identity, 1);
     objNormal?.addScore(identity, 1);
   } catch (err) {
-    console.warn(`[DeathScore] Failed: ${err}`);
+    console.warn("[DeathScore] Failed:" + err);
   }
 }
 
@@ -68,3 +68,5 @@ system.run(() => {
   getOrCreateObjective(SCOREBOARD_DEATHS);
   getOrCreateObjective(SCOREBOARD_DEATHS_PLUS);
 });
+
+console.warn("Death loaded successfully");

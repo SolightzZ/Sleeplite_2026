@@ -63,3 +63,5 @@ export function chatSendHandler(event) {
     });
   }
 }
+
+console.warn("Ban player loaded successfully");

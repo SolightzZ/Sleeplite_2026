@@ -37,3 +37,5 @@ export function updateFoodLore(player) {
     console.warn(`Error updating Lore for ${player.name}: ${error}`);
   }
 }
+
+console.warn("Food Data list loaded successfully");

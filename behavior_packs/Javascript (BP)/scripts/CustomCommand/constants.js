@@ -1,3 +1,5 @@
+import { Player } from "@minecraft/server";
+
 export const SERVER_LIST = [
   { displayName: "The Hive", ipAddress: "geo.hivebedrock.network", portNumber: 19132, iconTexture: "textures/items/4" },
   { displayName: "Zeqa", ipAddress: "zeqa.net", portNumber: 19132, iconTexture: "textures/items/5" },

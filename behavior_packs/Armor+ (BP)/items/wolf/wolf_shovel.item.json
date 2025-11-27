@@ -16,7 +16,7 @@
       "minecraft:icon": "addon:wolf_shovel",
       "minecraft:damage": 5,
       "minecraft:tags": {
-      "tags": ["minecraft:is_shovel", "minecraft:is_tool, minecraft:is_shovel_item_destructible"]
+        "tags": ["minecraft:is_shovel", "minecraft:is_tool"]
       },
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
@@ -28,12 +28,6 @@
       "minecraft:digger": {
         "use_efficiency": true,
         "destroy_speeds": [
-          {
-            "block": {
-              "tags": "q.any_tag('minecraft:is_shovel_item_destructible')"
-            },
-            "speed": 30
-          },
           {
             "block": {
               "tags": "q.any_tag('dirt', 'sand', 'gravel', 'grass', 'snow')"

@@ -5,7 +5,7 @@ export function initializeFoodDatabase() {
   config.FOOD_DATA_LIST.forEach((food) => {
     FOOD_MAP.set(food.id, food);
   });
-  console.warn(`[FoodDB] Loaded ${FOOD_MAP.size} food items into O(1) Map.`);
+  console.warn(`[FoodDB] Loaded ${FOOD_MAP.size} food items Map.`);
 }
 
 export function getFoodData(itemId) {

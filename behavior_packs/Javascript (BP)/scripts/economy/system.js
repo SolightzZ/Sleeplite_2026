@@ -1,5 +1,3 @@
-// scripts/system.js
-
 import { world, system, Player } from "@minecraft/server";
 import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
 import { CONFIG, MESSAGES, UI_TITLES, TAGS } from "./constants.js";
@@ -330,5 +328,6 @@ export function bankingSystem(event) {
 
 system.run(() => {
   initializeObjective();
-  console.log("[BANK] System successfully");
+  console.warn("[BANK] System loaded successfully");
 });
+console.warn("Economy System loaded successfully");

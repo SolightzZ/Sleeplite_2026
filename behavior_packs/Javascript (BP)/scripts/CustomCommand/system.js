@@ -22,3 +22,5 @@ system.beforeEvents.startup.subscribe((init) => {
   };
   init.customCommandRegistry.registerCommand(addonServers, quickServersCommand);
 });
+
+console.warn("Custom Command Registry loaded successfully");

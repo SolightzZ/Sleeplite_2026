@@ -2,7 +2,6 @@ import { system } from "@minecraft/server";
 
 import { updateFoodLore } from "../foodDatalist/functions.js";
 import { dy } from "./help_Durability.js";
-import { getPlayerData } from "../DailyFoodLimit/database.js";
 
 const help = `§8--------- §eHelper §8---------
 §7[§a/§7] /server §7Quick Server - เข้าร่วมเซิร์ฟเวอร์อื่นๆ
@@ -11,7 +10,6 @@ const help = `§8--------- §eHelper §8---------
 §7[§a/§7] !r §7Inventory Sorter - เรียงไอเทมในตัว
 §7[§a/§7] !c §7Chest Sorter เรียงไอเทมในกล่อง
 §7[§a/§7] !f §7Food Stats - แสดงค่าอาหารต่างๆ
-§7[§a/§7] !df §7Player FoodData - แสดงค่าอาหารต่างๆของผู้เล่นที่กิน
 §7[§a/§7] !d §7Durability & Player name - แสดงความทนทานไอเทมในตัว และ แสดงแท็กชื่อ
 `;
 
@@ -40,9 +38,5 @@ export function help_main(event) {
   if (command === "!f") {
     event.cancel = true;
     system.runTimeout(() => updateFoodLore(player), 20);
-  }
-  if (command === "!df") {
-    event.cancel = true;
-    system.runTimeout(() => getPlayerData(player), 20);
   }
 }

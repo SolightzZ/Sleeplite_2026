@@ -1,5 +1,3 @@
-// scripts/database.js
-
 import { world, Player } from "@minecraft/server";
 import { CONFIG, DEFAULTS } from "./constants.js";
 

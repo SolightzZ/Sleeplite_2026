@@ -1,34 +1,16 @@
 import { world, system } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import { playerCameraTemplates } from "./database.js";
-import {
-  chooseCameraSetting,
-  createCameraTemplate,
-  shareCameraTemplate,
-  removeCameraTemplate,
-  resetCamera,
-} from "./functions.js";
+import { chooseCameraSetting, createCameraTemplate, shareCameraTemplate, removeCameraTemplate, resetCamera } from "./functions.js";
 
 async function showCameraMainMenu(player) {
   try {
-    const form = new ActionFormData()
-      .title("Menu Camera")
-      .button("Setting Camera")
-      .button("Reset")
-      .button("Create")
-      .button("Share")
-      .button("Delete");
+    const form = new ActionFormData().title("Menu Camera").button("Setting Camera").button("Reset").button("Create").button("Share").button("Delete");
     const response = await form.show(player);
 
     if (response.canceled) return;
     const selection = response.selection;
-    const actions = [
-      chooseCameraSetting,
-      resetCamera,
-      createCameraTemplate,
-      shareCameraTemplate,
-      removeCameraTemplate,
-    ];
+    const actions = [chooseCameraSetting, resetCamera, createCameraTemplate, shareCameraTemplate, removeCameraTemplate];
     const selectedAction = actions[selection];
 
     if (!selectedAction) return;
@@ -52,8 +34,8 @@ async function showCameraMainMenu(player) {
         } else {
           await selectedAction(player);
         }
-      } catch (actionError) {
-        console.warn(`Error in action [${selection}]: ${actionError}`);
+      } catch (e) {
+        console.warn(`Error in action [${selection}]:` + e);
         player.sendMessage(`§c[Camera] Failed to complete operation`);
       }
     });
@@ -75,8 +57,8 @@ export function playerLeaveCamera(event) {
     playerCameraTemplates.delete(event.playerId);
     console.warn(`Cleared camera templates for Player ID ${event.playerId}`);
   } catch (error) {
-    console.warn(
-      `[Camera] Error clearing camera templates for Player ID ${event.playerId}: ${error}`,
-    );
+    console.warn(`[Camera] Error clearing camera templates for Player ID ${event.playerId}: ${error}`);
   }
 }
+
+console.warn("Camera loaded successfully");

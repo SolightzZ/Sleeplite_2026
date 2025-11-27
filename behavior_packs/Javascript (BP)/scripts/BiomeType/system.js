@@ -27,3 +27,5 @@ export function handlePlayerDimensionChange(data) {
     player.onScreenDisplay.setTitle(title, options);
   }, 35);
 }
+
+console.warn("Biome Type loaded successfully");

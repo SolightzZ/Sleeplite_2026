@@ -1,16 +1,16 @@
 import { world } from "@minecraft/server";
 import { ActionFormData } from "@minecraft/server-ui";
 import {
-  MagnetSearchRange,
-  MagnetMaximumConcurrentUsers,
-  MagnetPullLimitPerTick,
-  MagnetPullableTypeIdSet,
-  MagnetIconPathEnabled,
-  MagnetIconPathDisabled,
-  MagnetIconPathFull,
-  MagnetTitleEnabled,
-  MagnetTitleDisabled,
-  MagnetTitleFull,
+  SearchRange,
+  MaximumConcurrentUsers,
+  PullLimitPerTick,
+  PullableTypeIdSet,
+  IconPathEnabled,
+  IconPathDisabled,
+  IconPathFull,
+  TitleEnabled,
+  TitleDisabled,
+  TitleFull,
 } from "./constants.js";
 import {
   MagnetUserStates,
@@ -30,29 +30,23 @@ export function toggleMagnetForPlayer(player, turnOn) {
   const activeCount = getActiveMagnetUserCount();
 
   try {
-    if (turnOn && !currentlyActive && activeCount < MagnetMaximumConcurrentUsers) {
+    if (turnOn && !currentlyActive && activeCount < MaximumConcurrentUsers) {
       MagnetUserStates.set(playerId, { active: true });
       MagnetActiveUserIds.add(playerId);
-      player.onScreenDisplay.setActionBar(MagnetTitleEnabled);
-      try {
-        player.playSound?.("beacon.power", { volume: 1, pitch: 1.5 });
-      } catch {}
+      player.onScreenDisplay.setActionBar(TitleEnabled);
+      player.playSound?.("beacon.power", { volume: 1, pitch: 1.5 });
       startMagnetTaskLoop();
     } else if (!turnOn && currentlyActive) {
       MagnetUserStates.set(playerId, { active: false });
       MagnetActiveUserIds.delete(playerId);
-      player.onScreenDisplay.setActionBar(MagnetTitleDisabled);
-      try {
-        player.playSound?.("beacon.deactivate", { volume: 1, pitch: 1.5 });
-      } catch {}
-    } else if (turnOn && activeCount >= MagnetMaximumConcurrentUsers) {
-      player.onScreenDisplay.setActionBar(MagnetTitleFull(MagnetMaximumConcurrentUsers));
-      try {
-        player.playSound?.("random.anvil_land", { volume: 1, pitch: 1.5 });
-      } catch {}
+      player.onScreenDisplay.setActionBar(TitleDisabled);
+      player.playSound?.("beacon.deactivate", { volume: 1, pitch: 1.5 });
+    } else if (turnOn && activeCount >= MaximumConcurrentUsers) {
+      player.onScreenDisplay.setActionBar(TitleFull(MaximumConcurrentUsers));
+      player.playSound?.("random.anvil_land", { volume: 0.5, pitch: 1.5 });
     }
   } catch (error) {
-    console.warn(`[Magnet] Toggle failed: ${error}`);
+    console.warn(`[Magnet] Toggle Error: ${error}`);
     removeMagnetUserEverywhere(playerId);
   }
 }
@@ -69,48 +63,49 @@ export function pullNearbyEntitiesTowardsPlayer(player) {
 
   let pulledCount = 0;
 
-  ว;
   try {
     const nearbyEntities = playerDimension.getEntities({
       location: { x, y, z },
-      maxDistance: MagnetSearchRange,
+      maxDistance: SearchRange,
       excludeTypes: ["minecraft:player"],
     });
 
     for (const entity of nearbyEntities) {
-      if (pulledCount >= MagnetPullLimitPerTick) break;
-      if (!MagnetPullableTypeIdSet.has(entity.typeId)) continue;
+      if (pulledCount >= PullLimitPerTick) break;
+      if (!entity.isValid) continue;
+      if (!PullableTypeIdSet.has(entity.typeId)) continue;
 
-      try {
-        entity.teleport(targetLocation, teleportOptions);
-        pulledCount++;
-      } catch {}
+      entity.teleport(targetLocation, teleportOptions);
+      pulledCount++;
+      // console.warn(`Pulled Count: ${pulledCount}`);
     }
   } catch (error) {
-    console.warn(`[Magnet] Item attraction failed (Player ID: ${player.id}): ${error}`);
+    console.warn(`[Magnet] Pull Error (ID: ${player.id}): ${error}`);
   }
 }
 
 export function showMagnetMenuForPlayer(player) {
-  if (!isPlayerEntityValid(player)) return;
-
   try {
-    const allEntries = [...MagnetUserStates.entries()];
-    const activeNames = allEntries
-      .filter(([_, data]) => data.active)
-      .map(([id]) => {
-        const found = world.getEntity(id);
-        return found?.isValid ? `§7§l»§r §f${found.name}` : null;
-      })
-      .filter(Boolean)
-      .join("\n");
+    if (!isPlayerEntityValid(player)) return;
 
-    const listText = activeNames || "§8* ไม่มีใครเปิดอยู่";
-    const [buttonText, buttonIcon] = getMagnetButtonTextAndIconForPlayer(player, MagnetIconPathEnabled, MagnetIconPathDisabled, MagnetIconPathFull);
+    const activeEntries = [...MagnetUserStates.entries()].filter(([_, data]) => data.active);
+
+    let listText = "§8* No active players";
+    if (activeEntries.length > 0) {
+      listText = activeEntries
+        .map(([id]) => {
+          const found = world.getEntity(id);
+          return found?.isValid ? `§7» §f${found.name}` : null;
+        })
+        .filter(Boolean)
+        .join("\n");
+    }
+
+    const [buttonText, buttonIcon] = getMagnetButtonTextAndIconForPlayer(player, IconPathEnabled, IconPathDisabled, IconPathFull);
     const activeCount = getActiveMagnetUserCount();
 
     new ActionFormData()
-      .title(`แม่เหล็ก [ผู้เล่น: ${activeCount}/${MagnetMaximumConcurrentUsers}]`)
+      .title(`Magnet [${activeCount}/${MaximumConcurrentUsers}]`)
       .body(listText)
       .button(buttonText, buttonIcon)
       .show(player)
@@ -119,21 +114,23 @@ export function showMagnetMenuForPlayer(player) {
           const willTurnOn = !MagnetUserStates.get(player.id)?.active;
           toggleMagnetForPlayer(player, willTurnOn);
         }
-      })
-      .catch((error) => console.warn(`[Magnet] Menu error (Player: ${player.id}): ${error}`));
+      });
   } catch (error) {
-    console.warn(`[Magnet] Failed to display menu (Player: ${player.id}): ${error}`);
+    console.warn(`[Magnet] Menu Error: ${error}`);
   }
 }
 
-export function openMagnetMenuScriptEvent({ source }) {
+export function MagnetonScriptEvent({ source }) {
   if (isPlayerEntityValid(source)) showMagnetMenuForPlayer(source);
 }
-export function magnetPlayerLeaveEvent(event) {
+
+export function MagnetonPlayerLeave(event) {
   removeMagnetUserEverywhere(event.playerId);
-  console.warn(`Removed magnet data for Player ID ${event.playerId}`);
 }
-export function magnetEntityDieEvent(event) {
+
+export function MagnetonEntityDie(event) {
   const dead = event.deadEntity;
   if (dead?.typeId === "minecraft:player") removeMagnetUserEverywhere(dead.id);
 }
+
+console.warn("Magnet loaded successfully");

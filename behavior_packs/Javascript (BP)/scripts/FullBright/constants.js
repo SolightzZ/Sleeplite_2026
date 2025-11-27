@@ -9,8 +9,8 @@ export const SHOW_PARTICLES = false;
 export const MENU_TITLE = "Full Bright Control";
 export const BUTTON_TEXT_ENABLED = "Enabled Full Bright";
 export const BUTTON_TEXT_DISABLED = "Disabled Full Bright";
-export const ICON_ENABLED = "textures/items/fullbright_on";
-export const ICON_DISABLED = "textures/items/fullbright_off";
+export const ICON_ENABLED = "textures/items/full";
+export const ICON_DISABLED = "textures/items/full2";
 
-export const createEnabledMessage = (name) => `Full Bright Enabled (${name})`;
-export const createDisabledMessage = (name) => `Full Bright Disabled (${name})`;
+export const createEnabledMessage = (name) => `§fFull Bright §aEnabled§f (${name})`;
+export const createDisabledMessage = (name) => `§fFull Bright §cDisabled§f (${name})`;

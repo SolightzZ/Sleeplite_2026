@@ -23,7 +23,7 @@ function cleanInactiveUsers() {
   }
 }
 
-function handleLightBlockUse(player, itemStack) {
+function handleLightBlockUse(player) {
   system.runTimeout(() => {
     cleanInactiveUsers();
     if (ActiveUsers.size >= MaximumUsers && !ActiveUsers.has(player.id)) {
@@ -50,7 +50,7 @@ function handleLightBlockUse(player, itemStack) {
       player.startItemCooldown("light_search", CooldownTicks);
     } catch (error) {
       player.sendMessage("§cเกิดข้อผิดพลาด ในการค้นหา Light Block");
-      console.warn(error);
+      console.warn("handleLightBlockUse" + error);
     }
   }, 2);
 }
@@ -80,3 +80,5 @@ export function LligitemUse(event) {
 
   handleLightBlockUse(player, event.itemStack);
 }
+
+console.warn("Light Block loaded successfully");

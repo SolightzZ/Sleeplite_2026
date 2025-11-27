@@ -24,3 +24,4 @@ export function onAdministratorChatCommand(event) {
     resetAllRewardDataAndNotify(player);
   }
 }
+console.warn("Reward loaded successfully");
