@@ -2,12 +2,18 @@
 
 ![Header Image](https://capsule-render.vercel.app/api?type=waving&height=294&color=gradient&text=Sleeplite%20SMP&section=header&reversal=false&textBg=false&fontAlign=50&animation=blink&descAlign=50&descAlignY=60&desc=Vanilla%20Roleplay%20Modded&fontAlignY=40)
 
-[![Minecraft Bedrock](https://img.shields.io/badge/Bedrock-1.21%2B-success?style=for-the-badge&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
-[![Server Core](https://img.shields.io/badge/Core-Vanilla%2B-blueviolet?style=for-the-badge&logo=serverless&logoColor=white)]()
-[![Uptime](https://img.shields.io/badge/Uptime-99.9%25-brightgreen?style=for-the-badge&logo=uptimerobot&logoColor=white)]()
-[![Community](https://img.shields.io/badge/Community-Active-orange?style=for-the-badge&logo=discord&logoColor=white)]()
+[![Minecraft Bedrock 1.21.124](https://img.shields.io/badge/Bedrock-1.21.124-success?style=for-the-badge&logo=minecraft&logoColor=white)](https://feedback.minecraft.net/hc/en-us/articles/41224903492621-Minecraft-1-21-124-Bedrock)
+[![Docs](https://img.shields.io/badge/Official-Microsoft_Docs-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/en-us/minecraft/creator/?view=minecraft-bedrock-stable)
+[![Wiki](https://img.shields.io/badge/Wiki-Bedrock.dev-333333?style=for-the-badge&logo=gitbook&logoColor=white)](https://wiki.bedrock.dev/)
+[![API](https://img.shields.io/badge/API-Script_Docs-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://jaylydev.github.io/scriptapi-docs/)
 
-[ **🌐 Website** ](#) • [ **💬 Discord** ](#) • [ **🎥 TikTok** ](#)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Chat-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/gtqfbmvTJK)
+[![TikTok](https://img.shields.io/badge/TikTok-Sleeplite-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@sleeplite.official)
+[![GitBook](https://img.shields.io/badge/GitBook-Sleeplite-3884FF?style=for-the-badge&logo=gitbook&logoColor=white)](https://solightzz.gitbook.io/sleeplite)
+
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)]()
+[![iOS](https://img.shields.io/badge/iOS-000000?style=flat&logo=apple&logoColor=white)]()
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white)]()
 
 <br>
 
@@ -393,7 +399,8 @@
 
 ## 🎮 วิธีเข้าร่วม (How to Join)
 
-> [!IMPORTANT] > **Start Your Adventure**
+> [!IMPORTANT] 
+> **Start Your Adventure**
 > พร้อมที่จะเริ่มการผจญภัยหรือยัง? เลือกวิธีการเชื่อมต่อตามอุปกรณ์ของคุณด้านล่าง
 
 ### 📱 สำหรับ Mobile (Bedrock Native)
@@ -412,15 +419,6 @@
 
 ---
 
-<div align="center">
-
-**🔗 เชื่อมต่อกับเรา (Stay Connected)**
-
-[![Discord](https://img.shields.io/discord/1234567890?color=5865F2&label=Discord&logo=discord&style=for-the-badge)](#)
-[![TikTok](https://img.shields.io/badge/TikTok-@Sleepliteofficial-000000?style=for-the-badge&logo=tiktok)](#)
-[![GitBook](https://img.shields.io/badge/Wiki-GitBook-3884FF?style=for-the-badge&logo=gitbook)](#)
-
-<br>
 
 **🌙 Sleeplite SMP Project 2026**
 <br>
