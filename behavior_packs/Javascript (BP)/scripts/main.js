@@ -7,7 +7,7 @@ import "./Protection/system.js";
 import "./ban/system.js";
 import "./light/system.js";
 import "./Others/gravestones_entity.js";
-import "./Others/Hotbar.js";
+// import "./Others/Hotbar.js";
 import "./economy/system.js";
 import "./CustomCommand/system.js";
 import "./tools/crops/index.js";
