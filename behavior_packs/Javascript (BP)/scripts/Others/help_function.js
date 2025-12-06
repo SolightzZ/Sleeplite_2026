@@ -26,10 +26,8 @@ const getBreachReduction = (enchants) => {
 
 export const getDamageReduction = (armor, toughness, enchants, damage) => {
   const baseReduction = Math.min(20, Math.max(armor / 5, armor - (4 * damage) / (Math.min(toughness, 20) + 8))) / 25;
-
   const { protectionBonus, details } = getProtectionBonus(enchants);
   const breachReduction = getBreachReduction(enchants);
-
   const total = Math.max(0, Math.min(80, baseReduction * 100 + protectionBonus - breachReduction));
 
   return {

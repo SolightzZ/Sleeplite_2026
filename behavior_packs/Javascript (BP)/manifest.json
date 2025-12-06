@@ -1,7 +1,7 @@
 {
   "format_version": 2,
   "header": {
-    "name": "[4] Javascripts 1.21.120",
+    "name": "[4] Javascripts",
     "description": "Sleeplite SMP 2025",
     "uuid": "443064b6-27d1-467c-b432-01a3e852a2c5",
     "version": [1, 0, 0],
@@ -18,7 +18,7 @@
       "type": "script",
       "language": "javascript",
       "uuid": "07416640-971c-4d74-a01b-943667c8ee4d",
-      "version": [1, 21, 90],
+      "version": [1, 21, 124],
       "entry": "scripts/main.js"
     }
   ],

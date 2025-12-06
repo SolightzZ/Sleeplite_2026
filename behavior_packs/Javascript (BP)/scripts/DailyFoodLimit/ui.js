@@ -1,35 +1,38 @@
-import { system, world } from "@minecraft/server";
-import { COLORS } from "./config.js";
+import { world, system } from "@minecraft/server";
+import { colors } from "./constants.js";
 
-export const showLimitWarning = (player, itemName, max) => {
-  system.run(() => {
-    player.onScreenDisplay.setActionBar(`${COLORS.red}Limit: ${itemName} (${max}/${max})`);
-    player.playSound("note.bass", { volume: 0.5 });
-  });
-};
+export function warn(player, food, max) {
+  const msg = `${colors.red}Limit: ${food} (${max}/${max})`;
+  player.onScreenDisplay.setActionBar(msg);
+  player.playSound("note.bass", { volume: 0.5 });
+}
 
-export const showSuccessMessage = (player, itemName, current, max) => {
-  system.run(() => {
-    player.onScreenDisplay.setActionBar(`${COLORS.green}+ ${itemName} ${COLORS.white}(${current}/${max})`);
-  });
-};
+export function success(player, food, now, max) {
+  const msg = `${colors.green}+ ${food} ${colors.white}(${now}/${max})`;
+  player.onScreenDisplay.setActionBar(msg);
+}
 
-export const playNewDayAnimation = (dayNumber) => {
-  const textFrames = [" ", "-", "--", "-- D --", "-- DAY --", `-- DAY ${dayNumber} --`, "-- DAY --", "-- D --", "--", "-", " "];
+export function playmovie(day) {
+  const frames = [" ", "-", "--", "-- D --", "-- DA --", `-- DAY ${day} --`, "-- DA --", "-- D --", "--", "-", " "];
 
-  let frameIndex = 0;
-  const runFrame = () => {
-    if (frameIndex >= textFrames.length) return;
+  let i = 0;
 
-    const text = textFrames[frameIndex];
-    const duration = text.includes(dayNumber.toString()) ? 30 : 8;
+  const run = () => {
+    if (i >= frames.length) return;
 
-    for (const player of world.getPlayers()) {
-      player.onScreenDisplay.setActionBar(`${COLORS.gold}${text}`);
-      if (text.trim().length > 0) player.playSound("random.click", { volume: 1 });
+    const text = frames[i];
+    const delay = text.includes(day.toString()) ? 30 : 5;
+
+    for (const p of world.getPlayers()) {
+      p.onScreenDisplay.setActionBar(`${colors.gray}${text}`);
+      if (text.trim().length > 0) {
+        p.playSound("random.click", { volume: 0.5 });
+      }
     }
-    frameIndex++;
-    system.runTimeout(runFrame, duration);
+
+    i++;
+    system.runTimeout(run, delay);
   };
-  runFrame();
-};
+
+  run();
+}

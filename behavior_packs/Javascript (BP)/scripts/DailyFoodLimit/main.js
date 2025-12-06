@@ -1,26 +1,33 @@
-import { world, system, Player } from "@minecraft/server";
-import { CONFIG } from "./config.js";
+import { world, system } from "@minecraft/server";
+import { rules } from "./constants.js";
 import * as Core from "./core.js";
+import * as DayManager from "./day_manager.js";
 
-world.beforeEvents.itemUse.subscribe((event) => {
-  if (event.source instanceof Player) {
-    Core.processFoodLimit(event.source, event.itemStack, event);
+export function DailyFooditemUse(event) {
+  const id = event.source;
+  const playerIds = id.typeId;
+  const items = event.itemStack;
+  if (playerIds === "minecraft:player") {
+    Core.tryeat(id, items, event);
   }
-});
+}
+
+export function DailyFoodplayerLeave(event) {
+  const playerId = event.playerId;
+  Core.clean(playerId);
+}
 
 world.afterEvents.itemCompleteUse.subscribe((event) => {
-  if (event.source instanceof Player) {
-    Core.processFoodConsumption(event.source, event.itemStack);
+  const id = event.source;
+  const playerIds = id.typeId;
+  const items = event.itemStack;
+  if (playerIds === "minecraft:player") {
+    Core.ate(id, items);
   }
-});
-
-world.afterEvents.playerLeave.subscribe((event) => {
-  Core.cleanupPlayer(event.playerId);
 });
 
 system.runInterval(() => {
-  Core.checkDayCycle();
-}, CONFIG.dayCheckInterval);
+  DayManager.checkday();
+}, rules.checktime);
 
-console.warn("Daily FoodLimit loaded successfully");
-console.warn("Day Counter loaded successfully");
+console.warn("DailyFood & DayCounter loaded successfully");

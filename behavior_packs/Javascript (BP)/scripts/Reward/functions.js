@@ -1,43 +1,94 @@
 import { ItemStack } from "@minecraft/server";
-import { RewardConfiguration, VeryImportantPlayerTag } from "./constants.js";
+import { config } from "./constants.js";
 
-export function clampNumber(value, minimum, maximum) {
-  return Math.min(Math.max(value, minimum), maximum);
-}
-
-export function getItemShortNameFromTypeId(fullItemTypeId) {
-  return fullItemTypeId.split(":")[1] || fullItemTypeId;
-}
-
-export function formatDateAsTextFromDate(dateObj) {
-  const year = dateObj.getFullYear();
-  const month = String(dateObj.getMonth() + 1).padStart(2, "0");
-  const day = String(dateObj.getDate()).padStart(2, "0");
+export function time() {
+  const d = new Date();
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
   return `${day}/${month}/${year}`;
 }
 
-export function giveItemToPlayerIfSpace(player, itemTypeId, baseCount) {
+export function name(id) {
+  let text = id.split(":")[1] || id;
+  return text.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+export function give(player, id, count) {
   try {
-    const inventory = player.getComponent("minecraft:inventory")?.container;
-    if (!inventory) {
-      player.sendMessage("§c[x] ไม่พบคลังเก็บของของผู้เล่น");
-      return false;
+    const inv = player.getComponent("minecraft:inventory");
+    if (!inv || !inv.container) return false;
+
+    const container = inv.container;
+    const size = container.size;
+
+    let amountToAdd = count;
+    if (player.hasTag(config.vipTag)) {
+      amountToAdd = count * config.vipMul;
     }
-    if (inventory.emptySlotsCount < 1) {
-      player.sendMessage("§c[x] ช่องเก็บของเต็ม!");
+
+    console.warn(`[Give] Player: ${player.name}, Item: ${id}, Amount: ${amountToAdd}`);
+
+    const dummyItem = new ItemStack(id, 1);
+    const maxStack = dummyItem.maxAmount;
+
+    let freeSpace = 0;
+
+    for (let i = 0; i < size; i++) {
+      const slotItem = container.getItem(i);
+
+      if (!slotItem) {
+        freeSpace += maxStack;
+      } else if (slotItem.typeId === id) {
+        if (slotItem.amount < maxStack) {
+          freeSpace += maxStack - slotItem.amount;
+        }
+      }
+    }
+
+    if (freeSpace < amountToAdd) {
+      console.warn(`[Give] Failed: Not enough space. Needed: ${amountToAdd}, Free: ${freeSpace}`);
       return false;
     }
 
-    const finalCount = player.hasTag(VeryImportantPlayerTag) ? baseCount * RewardConfiguration.VeryImportantPlayerCountMultiplier : baseCount;
+    let remaining = amountToAdd;
 
-    const stack = new ItemStack(itemTypeId, finalCount);
-    inventory.addItem(stack);
+    for (let i = 0; i < size; i++) {
+      if (remaining <= 0) break;
+
+      const slotItem = container.getItem(i);
+
+      if (slotItem && slotItem.typeId === id && slotItem.amount < maxStack) {
+        const spaceInSlot = maxStack - slotItem.amount;
+        const toAdd = Math.min(remaining, spaceInSlot);
+
+        slotItem.amount += toAdd;
+        container.setItem(i, slotItem);
+
+        remaining -= toAdd;
+      }
+    }
+
+    if (remaining > 0) {
+      for (let i = 0; i < size; i++) {
+        if (remaining <= 0) break;
+
+        const slotItem = container.getItem(i);
+
+        if (!slotItem) {
+          const toAdd = Math.min(remaining, maxStack);
+
+          const newItem = new ItemStack(id, toAdd);
+          container.setItem(i, newItem);
+
+          remaining -= toAdd;
+        }
+      }
+    }
+
     return true;
-  } catch (error) {
-    console.warn(`[Reward] Give item error: ${error}`);
-    try {
-      player.sendMessage("§c[x] ข้อผิดพลาดขณะมอบไอเท็ม");
-    } catch {}
+  } catch (e) {
+    console.warn("Give Error: " + e);
     return false;
   }
 }

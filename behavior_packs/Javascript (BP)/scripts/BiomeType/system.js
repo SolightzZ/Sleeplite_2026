@@ -25,7 +25,7 @@ export function handlePlayerDimensionChange(data) {
       options.subtitle = `${Colors.white}${biomeName}`;
     }
     player.onScreenDisplay.setTitle(title, options);
-  }, 35);
+  }, 60);
 }
 
 console.warn("Biome Type loaded successfully");

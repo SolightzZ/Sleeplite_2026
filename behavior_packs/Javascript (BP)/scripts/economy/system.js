@@ -4,7 +4,6 @@ import { CONFIG, MESSAGES, UI_TITLES, TAGS } from "./constants.js";
 import { initializeObjective, getBalance, getAllBankPlayers } from "./database.js";
 import {
   countDiamonds,
-  getEmptySlots,
   getInventoryCapacity,
   requirePaper,
   depositDiamond,

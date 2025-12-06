@@ -1,60 +1,45 @@
 import { system } from "@minecraft/server";
-import { CONFIG, FOOD_SET } from "./config.js";
+import { rules, foods } from "./constants.js";
 import * as State from "./state.js";
 import * as Utils from "./utils.js";
 import * as UI from "./ui.js";
 
-const resolveName = (typeId) => {
-  let name = State.getCachedName(typeId);
-  if (!name) {
-    name = Utils.formatItemName(typeId);
-    State.setCachedName(typeId, name);
-  }
-  return name;
-};
+const spam = new Map();
 
-export const processFoodLimit = (player, itemStack, event) => {
-  const typeId = itemStack?.typeId;
-  if (!Utils.isFoodRestricted(FOOD_SET, typeId)) return;
+export function tryeat(player, item, event) {
+  const id = item.typeId;
 
-  const count = State.getPlayerCount(player.id, typeId);
+  if (!Utils.isfood(foods, id)) return;
 
-  if (count >= CONFIG.maxFoodPerDay) {
+  const name = Utils.fixname(id);
+  const count = State.getcount(player.id, id);
+
+  if (count >= rules.max) {
     event.cancel = true;
 
-    const currentTick = system.currentTick;
-    if (currentTick - State.getSpamTime(player.id) < CONFIG.spamCooldownTick) return;
+    const tick = system.currentTick;
+    const last = spam.get(player.id) || 0;
 
-    State.setSpamTime(player.id, currentTick);
-    UI.showLimitWarning(player, resolveName(typeId), CONFIG.maxFoodPerDay);
-  }
-};
-
-export const processFoodConsumption = (player, itemStack) => {
-  if (!itemStack) return;
-  const typeId = itemStack.typeId;
-
-  if (!Utils.isFoodRestricted(FOOD_SET, typeId)) return;
-
-  const newCount = State.incrementPlayerCount(player.id, typeId);
-  UI.showSuccessMessage(player, resolveName(typeId), newCount, CONFIG.maxFoodPerDay);
-};
-
-export const checkDayCycle = () => {
-  const currentDay = Utils.getCurrentDay();
-
-  if (currentDay > State.getLastDay()) {
-    State.resetAllDailyData();
-
-    const lastDay = State.getLastDay();
-    if (CONFIG.enableAnimation && lastDay !== -1) {
-      UI.playNewDayAnimation(currentDay);
+    if (tick - last > rules.spamwait) {
+      UI.warn(player, name, rules.max);
+      spam.set(player.id, tick);
     }
-
-    State.setLastDay(currentDay);
   }
-};
+}
 
-export const cleanupPlayer = (playerId) => {
-  State.clearPlayerData(playerId);
-};
+export function ate(player, item) {
+  if (!item) return;
+  const id = item.typeId;
+
+  if (!Utils.isfood(foods, id)) return;
+
+  const name = Utils.fixname(id);
+  const newcount = State.add(player.id, id);
+
+  UI.success(player, name, newcount, rules.max);
+}
+
+export function clean(playerid) {
+  State.clear(playerid);
+  spam.delete(playerid);
+}

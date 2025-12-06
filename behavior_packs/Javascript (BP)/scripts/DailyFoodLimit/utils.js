@@ -1,14 +1,9 @@
-import { world } from "@minecraft/server";
+export function fixname(id) {
+  if (!id) return "";
+  const raw = id.includes(":") ? id.split(":")[1] : id;
+  return raw.charAt(0).toUpperCase() + raw.slice(1).replace(/_/g, " ");
+}
 
-export const formatItemName = (typeId) => {
-  const raw = typeId.includes(":") ? typeId.split(":")[1] : typeId;
-  return raw.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-};
-
-export const getCurrentDay = () => {
-  return Math.floor(world.getAbsoluteTime() / 24000);
-};
-
-export const isFoodRestricted = (foodSet, typeId) => {
-  return typeId && foodSet.has(typeId);
-};
+export function isfood(set, id) {
+  return set.has(id);
+}

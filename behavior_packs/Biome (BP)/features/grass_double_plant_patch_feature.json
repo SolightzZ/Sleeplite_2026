@@ -4,7 +4,7 @@
     "description": {
       "identifier": "minecraft:grass_double_plant_patch_feature"
     },
-    "iterations": 64,
+    "iterations": 32,
     "coordinate_eval_order": "zyx",
     "x": {
       "extent": [-8, 8],

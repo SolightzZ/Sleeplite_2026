@@ -1,6 +1,6 @@
 import { system } from "@minecraft/server";
 
-import { updateFoodLore } from "../foodDatalist/functions.js";
+import { updatePlayerItems } from "../foodDatalist/functions.js";
 import { dy } from "./help_Durability.js";
 
 const help = `§8--------- §eHelper §8---------
@@ -16,7 +16,7 @@ const help = `§8--------- §eHelper §8---------
 const adminHelp = `§8--------- §cHelper Admin §8---------
 §7[§c/§7] !json - แสดงข้อมูล JSON Protection
 §7[§c/§7] !reset-login - รีเซ็ตข้อมูล Reward
-§7[§c/§7] !json-login - แสดงข้อมูลล็อกอิน JSON Reward
+§7[§c/§7] !check-reward - แสดงข้อมูลล็อกอิน JSON Reward
 §7[§c/§7] !banlist - แสดงข้อมูลรายชื่อการแบน
 `;
 
@@ -37,6 +37,6 @@ export function help_main(event) {
   }
   if (command === "!f") {
     event.cancel = true;
-    system.runTimeout(() => updateFoodLore(player), 20);
+    system.runTimeout(() => updatePlayerItems(player), 20);
   }
 }

@@ -1,23 +1,48 @@
-import { GameMode } from "@minecraft/server";
+export const list = [
+  // 1-7 Day
+  { day: 1, id: "minecraft:apple", count: 8 },
+  { day: 2, id: "minecraft:bread", count: 12 },
+  { day: 3, id: "minecraft:coal", count: 32 },
+  { day: 4, id: "minecraft:oak_log", count: 16 },
+  { day: 5, id: "minecraft:cooked_beef", count: 6 },
+  { day: 6, id: "minecraft:ender_pearl", count: 8 },
+  { day: 7, id: "minecraft:iron_ingot", count: 64 },
 
-export const RewardConfiguration = Object.freeze({
-  VeryImportantPlayerCountMultiplier: 2,
-  TotalRewardDaysInCycle: 7,
-  MaximumStoredJsonTextLength: 30000,
-});
+  // 8-14 Day
+  { day: 8, id: "minecraft:saddle", count: 1 },
+  { day: 9, id: "minecraft:lapis_lazuli", count: 20 },
+  { day: 10, id: "minecraft:cooked_beef", count: 16 },
+  { day: 11, id: "minecraft:golden_carrot", count: 20 },
+  { day: 12, id: "minecraft:experience_bottle", count: 32 },
+  { day: 13, id: "minecraft:dried_kelp_block", count: 10 },
+  { day: 14, id: "minecraft:gold_ingot", count: 64 },
 
-export const RewardPlanByDay = Object.freeze([
-  { DayIndexOneBased: 1, ItemTypeId: "minecraft:apple", ItemCount: 8 },
-  { DayIndexOneBased: 2, ItemTypeId: "minecraft:bread", ItemCount: 16 },
-  { DayIndexOneBased: 3, ItemTypeId: "minecraft:iron_ingot", ItemCount: 32 },
-  { DayIndexOneBased: 4, ItemTypeId: "minecraft:gold_ingot", ItemCount: 32 },
-  { DayIndexOneBased: 5, ItemTypeId: "minecraft:diamond", ItemCount: 5 },
-  { DayIndexOneBased: 6, ItemTypeId: "minecraft:emerald", ItemCount: 46 },
-  { DayIndexOneBased: 7, ItemTypeId: "minecraft:totem_of_undying", ItemCount: 1 },
-]);
+  // 15-21 Day
+  { day: 15, id: "minecraft:turtle_scute", count: 10 },
+  { day: 16, id: "minecraft:redstone", count: 24 },
+  { day: 17, id: "minecraft:blue_ice", count: 16 },
+  { day: 18, id: "minecraft:brick_block", count: 64 },
+  { day: 19, id: "minecraft:wind_charge", count: 8 },
+  { day: 20, id: "minecraft:golden_carrot", count: 32 },
+  { day: 21, id: "minecraft:diamond", count: 16 },
 
-export const PlayerRewardDynamicPropertyKey = "Data:Reward";
-export const AdministratorPlayerTag = "admin";
-export const VeryImportantPlayerTag = "VIP";
+  // 22-28 Day
+  { day: 22, id: "minecraft:skull", count: 3 },
+  { day: 23, id: "minecraft:book", count: 32 },
+  { day: 24, id: "minecraft:honey_block", count: 16 },
+  { day: 25, id: "minecraft:slime", count: 32 },
+  { day: 26, id: "minecraft:wind_charge", count: 16 },
+  { day: 27, id: "minecraft:golden_apple", count: 64 },
+  { day: 28, id: "minecraft:totem_of_undying", count: 5 },
 
-export const BlockedGameModes = Object.freeze([GameMode.Creative, GameMode.Spectator]);
+  // 29-30 Day
+  { day: 29, id: "minecraft:totem_of_undying", count: 7 },
+  { day: 30, id: "minecraft:enchanted_golden_apple", count: 7 },
+];
+
+export const config = {
+  vipMul: 2,
+  vipTag: "vip",
+  adminTag: "admin",
+  dbKey: "reward:one1",
+};

@@ -9,7 +9,6 @@ const getOrCreateDeathScore = (player) => {
   if (!scoreboard) return 0;
 
   const playerIdentity = player.scoreboardIdentity;
-
   let deathScore = 0;
 
   try {

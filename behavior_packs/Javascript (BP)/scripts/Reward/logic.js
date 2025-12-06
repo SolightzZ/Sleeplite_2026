@@ -1,135 +1,98 @@
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
-import { RewardPlanByDay } from "./constants.js";
-import {
-  giveItemToPlayerIfSpace,
-  getItemShortNameFromTypeId,
-  formatDateAsTextFromDate,
-} from "./functions.js";
-import {
-  loadRewardDataOrEmptyObject,
-  saveRewardDataOrReturnFalse,
-} from "./database.js";
+import { list } from "./constants.js";
+import { load, save } from "./database.js";
+import { time, name, give } from "./functions.js";
 
-export function confirmAndClaimReward(
-  player,
-  currentDayIndexZeroBased,
-  dateText,
-  mutableAllData,
-) {
-  const plan = RewardPlanByDay[currentDayIndexZeroBased];
+export function menu(player) {
+  const today = time();
+  const db = load(player);
 
-  const confirmForm = new MessageFormData()
-    .title("ยืนยันการรับรางวัล")
-    .body(
-      `วันที่: ${dateText}\n` +
-        `ไอเท็ม: ${getItemShortNameFromTypeId(plan.ItemTypeId)}\n` +
-        `จำนวน: ${plan.ItemCount}\n` +
-        `ต้องการรับตอนนี้หรือไม่?`,
-    )
-    .button1("ยกเลิก")
-    .button2("รับรางวัล");
+  if (db.count >= list.length) {
+    db.count = 0;
+  }
 
-  confirmForm.show(player).then((result) => {
-    if (result.canceled) return;
-    if (result.selection !== 1) return;
+  const form = new ActionFormData();
+  form.title("Daily Reward");
+  form.body(`Date: ${today}\nClaimed: ${db.count} Days`);
 
-    try {
-      if (giveItemToPlayerIfSpace(player, plan.ItemTypeId, plan.ItemCount)) {
-        mutableAllData[player.name] = {
-          login: currentDayIndexZeroBased + 1,
-          Time: dateText,
-        };
-        if (saveRewardDataOrReturnFalse(mutableAllData)) {
-          player.sendMessage(
-            `[/] คุณได้รับ ${plan.ItemCount}x ${getItemShortNameFromTypeId(plan.ItemTypeId)} เมื่อ ${dateText}`,
-          );
-        } else {
-          player.sendMessage("§c[x] ข้อผิดพลาดในการบันทึกข้อมูลการเข้าสู่ระบบ");
-        }
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i];
+
+    const isPast = i < db.count;
+    const isTarget = i === db.count;
+    const isClaimedToday = db.last === today;
+
+    let txt = "";
+    let icon = "";
+
+    if (isPast) {
+      txt = `Day ${item.day}: ${name(item.id)}`;
+      icon = "textures/ui/worldsIcon.png";
+    } else if (isTarget) {
+      if (isClaimedToday) {
+        txt = `Day ${item.day}: Come back tomorrow`;
+        icon = "textures/ui/world_glyph_desaturated.png";
+      } else {
+        txt = `Day ${item.day}: ${name(item.id)} (Click!)`;
+        icon = "textures/ui/csbChevronArrowLarge.png";
       }
-    } catch (error) {
-      console.warn(`[Reward] Confirm error: ${error}`);
-      player.sendMessage("§c[x] เกิดข้อผิดพลาดขณะยืนยันรางวัล");
+    } else {
+      txt = `§8Day ${item.day}: Locked`;
+      icon = "textures/ui/world_glyph_desaturated.png";
     }
-  });
-}
 
-export function showRewardSelectionForm(player) {
-  try {
-    const now = new Date();
-    const todayText = formatDateAsTextFromDate(now);
+    form.button(txt, icon);
+  }
 
-    const allData = loadRewardDataOrEmptyObject();
-    let playerData = allData[player.name] || { login: 0, Time: null };
-    let claimedDaysCount = playerData.login;
+  form.show(player).then((res) => {
+    if (res.canceled) return;
 
-    const inventory = player.getComponent("minecraft:inventory")?.container;
-    if (!inventory) {
-      player.sendMessage("§c[x] ไม่พบคลังเก็บของของผู้เล่น");
+    if (res.selection !== db.count) {
+      player.sendMessage("§c[x] กรุณารับของตามลำดับ");
       return;
     }
 
-    const totalDays = RewardPlanByDay.length;
-    if (claimedDaysCount >= totalDays) {
-      claimedDaysCount = 0;
-      playerData = { login: 0, Time: null };
-      allData[player.name] = playerData;
-      saveRewardDataOrReturnFalse(allData);
+    if (db.last === today) {
+      player.sendMessage("§c[x] คุณรับของวันนี้ไปแล้ว");
+      return;
     }
 
-    const form = new ActionFormData()
-      .title("Reward")
-      .body(
-        `Today: ${todayText}\nClaimed: ${claimedDaysCount} Day`,
-      );
+    confirm(player, db, today);
+  });
+}
 
-    for (let i = 0; i < totalDays; i++) {
-      const plan = RewardPlanByDay[i];
-      const isAlreadyClaimed = i < claimedDaysCount;
-      const isCurrentDay = i === claimedDaysCount;
+function confirm(player, db, today) {
+  const item = list[db.count];
+  const bodyText = [
+    `§7==========================`,
+    ` §fPlayer: §e${player.name}`,
+    ` §fDate: §e${today}`,
+    `§7--------------------------`,
+    ``,
+    ` §fYou will receive:`,
+    ` §6➤ ${name(item.id)} x${item.count}`,
+    ``,
+    `§7--------------------------`,
+    `§8(Click Claim to accept)`,
+  ].join("\n");
+  const ui = new MessageFormData();
+  ui.title("Confirm");
+  ui.body(bodyText);
+  ui.button1("Cancel");
+  ui.button2("Claim");
 
-      let buttonText;
-      const buttonIconPath = isAlreadyClaimed
-        ? "textures/ui/worldsIcon.png"
-        : "textures/ui/world_glyph_desaturated.png";
+  ui.show(player).then((res) => {
+    if (res.selection === 1) {
+      if (give(player, item.id, item.count)) {
+        db.last = today;
+        db.count = db.count + 1;
 
-      if (isCurrentDay && inventory.emptySlotsCount < 1) {
-        buttonText = `ช่องเก็บของเต็ม!`;
-      } else if (isAlreadyClaimed) {
-        buttonText = `§7Day ${plan.DayIndexOneBased}: ${getItemShortNameFromTypeId(plan.ItemTypeId)} (รับแล้ว)`;
+        save(player, db);
+        player.sendMessage(`§a[/] §aรับของสำเร็จ! ได้รับ ${name(item.id)}`);
+        player.playSound("random.levelup");
       } else {
-        buttonText = `Day ${plan.DayIndexOneBased}: ${getItemShortNameFromTypeId(plan.ItemTypeId)} (${isCurrentDay ? "พร้อมรับ" : "รอ"})`;
+        player.sendMessage("§c[x] §cช่องเก็บของเต็ม");
       }
-
-      form.button(buttonText, buttonIconPath);
     }
-
-    form.show(player).then((result) => {
-      if (result.canceled) return;
-
-      const selectedIndex = result.selection;
-
-      if (selectedIndex !== claimedDaysCount) {
-        player.sendMessage("§c[x] กรุณารับรางวัลตามลำดับวัน!");
-        return;
-      }
-
-      if (inventory.emptySlotsCount < 1) {
-        player.sendMessage(
-          "§c[x] ช่องเก็บของเต็ม! กรุณาเคลียร์ช่องเก็บของก่อน",
-        );
-        return;
-      }
-
-      if (playerData.Time === todayText) {
-        player.sendMessage(`§7[/] คุณรับรางวัลวันนี้ไปแล้ว (${todayText})`);
-        return;
-      }
-
-      confirmAndClaimReward(player, claimedDaysCount, todayText, allData);
-    });
-  } catch (error) {
-    console.warn(`[Reward] Show form error: ${error}`);
-    player.sendMessage("§c[x] เกิดข้อผิดพลาดขณะแสดง GUI");
-  }
+  });
 }

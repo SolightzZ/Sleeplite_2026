@@ -4,8 +4,9 @@ import { FullBrightonPlayerLeave } from "./FullBright/system";
 import { playerLeaveCamera } from "./Camera/system";
 import { MagnetonPlayerLeave } from "./magnet/functions.js";
 import { clearVisualStateForPlayers } from "./Protection/system.js";
+import { DailyFoodplayerLeave } from "./DailyFoodLimit/main.js";
 
-const PLAYER_LEAVE = [FullBrightonPlayerLeave, playerLeaveCamera, MagnetonPlayerLeave, clearVisualStateForPlayers];
+const PLAYER_LEAVE = [FullBrightonPlayerLeave, playerLeaveCamera, MagnetonPlayerLeave, clearVisualStateForPlayers, DailyFoodplayerLeave];
 
 export function onPlayerLeave(event) {
   try {

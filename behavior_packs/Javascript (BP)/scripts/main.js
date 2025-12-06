@@ -12,6 +12,8 @@ import "./economy/system.js";
 import "./CustomCommand/system.js";
 import "./tools/crops/index.js";
 import "./tools/hammer/index.js";
+import "./DoorAir/main.js";
+import "./thirst/main.js";
 
 import { onItemUse } from "./A_itemUse.js";
 import { onEntityDeath } from "./B_entityDie.js";
@@ -22,8 +24,6 @@ import { handlePlayerDimensionChange } from "./BiomeType/system.js";
 import { LlightentityHitBlock } from "./light/system.js";
 import { onGravestoneInteract } from "./Others/gravestones_entity.js";
 import { touch } from "./EndPortalFrame/play.js";
-import { startGame } from "./thirst/main.js";
-startGame();
 
 world.afterEvents.itemUse.subscribe(onItemUse);
 world.afterEvents.entityDie.subscribe(onEntityDeath);

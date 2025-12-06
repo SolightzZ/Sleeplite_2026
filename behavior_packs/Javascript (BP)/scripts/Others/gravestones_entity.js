@@ -11,6 +11,6 @@ export function onGravestoneInteract(event) {
     } catch (e) {
       console.warn("[Gravestone] Failed" + e);
     }
-  }, 2);
+  }, 1);
 }
 console.warn("Gravestone Interact loaded successfully");

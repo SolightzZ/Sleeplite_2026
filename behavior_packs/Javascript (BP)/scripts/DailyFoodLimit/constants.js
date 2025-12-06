@@ -1,17 +1,18 @@
-export const Colors = { gold: "§6", white: "§f", gray: "§7", red: "§c" };
-
-export const SYSTEM_CONFIG = {
-  CHECK_INTERVAL: 512,
-  MAX_UI_OPS: 200,
-  BROADCAST_GAP: 30,
-  METRICS_INTERVAL: 2400,
+export const colors = {
+  gray: "§7",
+  white: "§f",
+  red: "§c",
+  green: "§a",
+  reset: "§r",
 };
 
-export const FOOD_CONFIG = {
-  MAX_PER_DAY: 8,
+export const rules = {
+  max: 8,
+  checktime: 500,
+  spamwait: 20,
 };
 
-export const FOOD_LIST = [
+export const foods = new Set([
   "minecraft:apple",
   "minecraft:bread",
   "minecraft:cooked_beef",
@@ -71,16 +72,4 @@ export const FOOD_LIST = [
   "addon:sp_2",
   "addon:sp_3",
   "addon:sp_4",
-];
-
-export const FOOD_SET = new Set(FOOD_LIST);
-
-export const FOOD_DISPLAY_NAME = (() => {
-  const m = new Map();
-  for (const id of FOOD_LIST) {
-    const raw = id.split(":").pop() ?? id;
-    const formatted = raw.charAt(0).toUpperCase() + raw.slice(1).replace(/_/g, " ");
-    m.set(id, formatted);
-  }
-  return m;
-})();
+]);
