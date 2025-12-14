@@ -1,0 +1,32 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[3] Items (RP)",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "02a8fee8-8d82-435a-92ff-e36dd3dd5247",
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 0]
+  },
+
+  "modules": [
+    {
+      "description": "(RP)",
+      "type": "resources",
+      "uuid": "a3238324-336a-4f33-8954-168862fb0335",
+      "version": [1, 0, 2]
+    }
+  ],
+
+  "subpacks": [
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 0
+    },
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 1
+    }
+  ]
+}

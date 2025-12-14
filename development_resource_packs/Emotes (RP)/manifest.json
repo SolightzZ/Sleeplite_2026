@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "[2] Emote (RP)",
+    "description": "Sleeplite SMP 2025",
+    "uuid": "a96505e1-633f-4e88-b9ff-bf2d3111e3e0",
+    "version": [1, 2, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "(RP)",
+      "type": "resources",
+      "uuid": "1a5fef74-3d2e-454c-b8b6-7b0f36fdf7d5",
+      "version": [1, 4, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 0
+    },
+    {
+      "folder_name": "0",
+      "name": "0",
+      "memory_tier": 1
+    }
+  ]
+}

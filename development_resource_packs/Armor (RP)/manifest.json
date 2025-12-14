@@ -1,0 +1,21 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "authors": ["Alien Edds Gaming"],
+    "product_type": "addon"
+  },
+  "header": {
+    "description": "pack.description",
+    "name": "[8] Armor (RP)",
+    "uuid": "45a9122d-2981-4392-85b6-084226a8469e",
+    "min_engine_version": [1, 21, 80],
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "1595aba6-f226-4ee3-8411-73825c5c8f4b",
+      "version": [1, 0, 0]
+    }
+  ]
+}

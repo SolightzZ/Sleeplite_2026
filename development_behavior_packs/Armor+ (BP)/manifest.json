@@ -1,0 +1,27 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "authors": ["Alien Edds Gaming"],
+    "product_type": "addon"
+  },
+  "header": {
+    "description": "Sleeplite SMP 2025",
+    "name": "[10] Armor+ ",
+    "uuid": "2f6e14b1-5dab-438a-b9c8-9218ed8e3edd",
+    "min_engine_version": [1, 21, 80],
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "a8fb10e8-3fba-4045-8423-3b398fc33729",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "45a9122d-2981-4392-85b6-084226a8469e",
+      "version": [1, 0, 0]
+    }
+  ]
+}

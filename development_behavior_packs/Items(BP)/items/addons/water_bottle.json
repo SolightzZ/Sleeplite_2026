@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "addon:water_bottle",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 16,
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": 0,
+        "can_always_eat": true,
+        "using_converts_to": "glass_bottle"
+      },
+      "minecraft:use_animation": "drink",
+      "minecraft:use_modifiers": { "movement_modifier": 0.35, "use_duration": 1.6 },
+      "minecraft:icon": { "texture": "addon_water_bottle" },
+      "minecraft:display_name": { "value": "addon.water_bottle" }
+    }
+  }
+}
