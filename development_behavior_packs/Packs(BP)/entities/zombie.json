@@ -517,6 +517,7 @@
         "must_see": true,
         "reselect_targets": true,
         "within_radius": 25.0,
+        "attack_interval": 40,
         "must_see_forget_duration": 17.0,
         "entity_types": [
           {

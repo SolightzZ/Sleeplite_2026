@@ -14,32 +14,18 @@ const DEATH_ACTIONS = {
 };
 
 export function onEntityDeath(event) {
-  try {
-    const entity = event.deadEntity;
-    if (!entity) return;
+  const entity = event.deadEntity;
+  if (!entity) return;
 
-    const actions = DEATH_ACTIONS[entity.typeId];
-    if (!actions) return;
+  const actions = DEATH_ACTIONS[entity.typeId];
+  if (!actions) return;
 
-    if (Array.isArray(actions)) {
-      for (let i = 0; i < actions.length; i++) {
-        const fn = actions[i];
-        if (!fn) continue;
-        try {
-          fn(event);
-        } catch (err) {
-          console.error(`[DeathSystem] Error in ${fn.name || "unknown"}:`, err);
-        }
-      }
-    } else {
-      try {
-        actions(event);
-      } catch (err) {
-        console.error(`[DeathSystem] Error in ${actions.name || "unknown"}:`, err);
-      }
+  if (Array.isArray(actions)) {
+    for (let i = 0; i < actions.length; i++) {
+      const fn = actions[i];
+      if (!fn) continue;
+      fn(event);
     }
-  } catch (err) {
-    console.error(`[DeathSystem] Error:`, err);
   }
 }
 console.warn("[world afterEvents entityDie] loaded successfully");

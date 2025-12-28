@@ -523,6 +523,7 @@
         "priority": 2,
         "must_see": true,
         "reselect_targets": true,
+        "attack_interval": 40,
         "within_radius": 25.0,
         "entity_types": [
           {

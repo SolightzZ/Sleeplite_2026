@@ -24,7 +24,7 @@ export function playmovie(day) {
     const delay = text.includes(day.toString()) ? 30 : 5;
 
     for (const p of world.getPlayers()) {
-      p.onScreenDisplay.setActionBar(`${colors.gray}${text}`);
+      p.onScreenDisplay.setActionBar(`${text}`);
       if (text.trim().length > 0) {
         p.playSound("random.click", { volume: 0.5 });
       }

@@ -31,23 +31,18 @@ const ITEM_ACTIONS = {
 };
 
 export function onItemUse(e) {
-  try {
-    const { source, itemStack } = e;
-    if (!(source instanceof Player)) return;
-    if (!itemStack) return;
-    const itemId = itemStack.typeId;
+  const { source, itemStack } = e;
+  if (!(source instanceof Player)) return;
+  if (!itemStack) return;
+  const itemId = itemStack.typeId;
 
-    if (foods.has(itemId)) {
-      DailyFooditemUse(e);
-      return;
-    }
-
-    const action = ITEM_ACTIONS[itemStack.typeId];
-    if (!action) return;
-
-    action(e);
-  } catch (err) {
-    console.warn(`[itemUse] handler error: ${err}`);
+  if (foods.has(itemId)) {
+    DailyFooditemUse(e);
+    return;
   }
+
+  const action = ITEM_ACTIONS[itemStack.typeId];
+  if (!action) return;
+  action(e);
 }
 console.warn("[world afterEvents itemUse] loaded successfully");

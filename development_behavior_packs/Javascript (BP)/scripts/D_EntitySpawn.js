@@ -16,14 +16,10 @@ export function onEntitySpawn(event) {
   if (!actions) return;
 
   system.run(() => {
-    try {
-      for (const action of actions) {
-        if (typeof action === "function") {
-          action(event);
-        }
+    for (const action of actions) {
+      if (typeof action === "function") {
+        action(event);
       }
-    } catch (error) {
-      console.warn(`[EntitySpawn Error] ID: ${entity.typeId} | ${error}`);
     }
   });
 }

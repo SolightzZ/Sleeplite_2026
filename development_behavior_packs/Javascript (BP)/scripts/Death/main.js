@@ -4,66 +4,49 @@ import { fixWorld, fixPos } from "./helper.js";
 import { getItem } from "./data.js";
 
 function getBoard(name) {
-  let board = world.scoreboard.getObjective(name);
-
-  if (!board) {
-    try {
-      board = world.scoreboard.addObjective(name);
-    } catch (err) {
-      console.warn(`[Board] getBoard '${name}': ${err}`);
-    }
-  }
-
-  return board;
+  return world.scoreboard.getObjective(name) ?? world.scoreboard.addObjective(name, name);
 }
 
 function addScore(player) {
-  const card = player.scoreboardIdentity;
-  if (!card) return;
+  if (!player?.scoreboardIdentity) return;
 
-  try {
-    const score1 = getBoard(board1);
-    const score2 = getBoard(board2);
-
-    score1?.addScore(card, 1);
-    score2?.addScore(card, 1);
-  } catch (err) {
-    console.warn(`[Score] addScore: ${err}`);
-  }
+  const realBoard = getBoard(board1);
+  realBoard.addScore(player.scoreboardIdentity, 1);
+  const fakeBoard = getBoard(board2);
+  fakeBoard.addScore(`*${player.name}`, 1);
 }
 
 function dropThing(player, hurt) {
   const name = player.name;
-  const pos = fixPos(player.location ?? { x: 0, y: 0, z: 0 });
-  const world = fixWorld(player.dimension?.id ?? "minecraft:overworld");
+  const pos = fixPos(player.location);
+  const worldName = fixWorld(player.dimension.id);
 
-  player.sendMessage(`§7[/] ${name} died at ${pos.x} ${pos.y} ${pos.z} in ${world}`);
+  player.sendMessage(`§7[/] ${name} died at §c${pos.x} ${pos.y} ${pos.z} §7in ${worldName}`);
 
-  const thing = getItem(name);
-  if (!thing) return;
+  const itemKey = getItem(name);
+  if (!itemKey) return;
 
   try {
-    const bad = hurt?.damagingEntity;
-    let badName = "Unknown";
+    const src = hurt?.damagingEntity;
+    let killer = "Unknown";
 
-    if (bad) {
-      if (bad.typeId === "minecraft:player") {
-        badName = bad.name ?? "Unknown Player";
-      } else {
-        badName = bad.typeId.replace("minecraft:", "");
-      }
-    } else {
-      badName = hurt?.cause ?? "Unknown";
+    if (src instanceof Player) {
+      killer = src.name;
+    } else if (src?.typeId) {
+      killer = src.typeId.split(":").pop();
+    } else if (hurt?.cause) {
+      killer = String(hurt.cause);
     }
 
-    const item = new ItemStack(thing, 1);
-    item.setLore([`§r§8Killer: §9${badName}`, `§r§8Location: §9${pos.x} ${pos.y} ${pos.z}`, `§r§8Dimension: §9${world}`]);
+    const item = new ItemStack(itemKey, 1);
+    item.setLore([`§r§8Killer: §9${killer}`, `§r§8Location: §9${pos.x} ${pos.y} ${pos.z}`, `§r§8Dimension: §9${worldName}`]);
 
-    const drop = hurt?.cause === "void" ? { x: pos.x, y: -55, z: pos.z } : pos;
+    const minY = player.dimension.heightRange.min + 1;
+    const y = hurt?.cause === "void" ? Math.max(pos.y, minY) : pos.y;
 
-    player.dimension.spawnItem(item, drop);
+    player.dimension.spawnItem(item, { ...pos, y });
   } catch (err) {
-    console.warn(`[Drop] getItem (${name}): ${err}`);
+    console.warn(`[Drop Error] ${err}`);
   }
 }
 
@@ -82,6 +65,5 @@ export function onDieDeaths(event) {
 system.run(() => {
   getBoard(board1);
   getBoard(board2);
+  console.warn(`[System] Death System loaded successfully - Boards: ${board1}, ${board2}`);
 });
-
-console.warn("Death loaded successfully");

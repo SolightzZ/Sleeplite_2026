@@ -1,7 +1,7 @@
 import { world, system } from "@minecraft/server";
 
 const stat = "Deaths";
-const head = "§e[!] Welcome to Sleeplite Community 2025";
+const head = "§e[!] Welcome to SMP Season 1";
 const wait = 150;
 
 function read(boy) {

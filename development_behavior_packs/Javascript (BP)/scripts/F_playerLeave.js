@@ -9,20 +9,11 @@ import { DailyFoodplayerLeave } from "./DailyFoodLimit/main.js";
 const PLAYER_LEAVE = [FullBrightonPlayerLeave, playerLeaveCamera, onLeave, clearVisualStateForPlayers, DailyFoodplayerLeave];
 
 export function onPlayerLeave(event) {
-  try {
-    const playerId = event;
-
-    system.run(() => {
-      try {
-        PLAYER_LEAVE.forEach((actionFn) => {
-          actionFn(playerId);
-        });
-      } catch (error) {
-        console.warn(`[PlayerLeave] Error during cleanup for Player ID ${playerId}: ${error}`);
-      }
+  const playerId = event;
+  system.run(() => {
+    PLAYER_LEAVE.forEach((actionFn) => {
+      actionFn(playerId);
     });
-  } catch (err) {
-    console.error(`[PlayerLeave] Error:`, err);
-  }
+  });
 }
 console.warn("[world afterEvents playerLeave] loaded successfully");

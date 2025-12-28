@@ -54,6 +54,7 @@ export function showCameraMenu(eventOrPlayer) {
 
 export function playerLeaveCamera(event) {
   try {
+    if (playerCameraTemplates.has) return;
     playerCameraTemplates.delete(event.playerId);
     console.warn(`Cleared camera templates for Player ID ${event.playerId}`);
   } catch (error) {

@@ -25,9 +25,7 @@ export const showBar = (player) => {
 };
 
 export const playBurp = (player) => {
-  try {
-    player.playSound("random.burp");
-  } catch {}
+  player.playSound("random.burp");
 };
 
 export const giveMagic = (player, magic) => {
